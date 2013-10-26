@@ -15,6 +15,5 @@
 
 .svn*
 *.elf
-*.iso
 .cproject
 .settings
