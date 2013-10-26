@@ -11,3 +11,10 @@
 *.lai
 *.la
 *.a
+
+
+.svn*
+*.elf
+*.iso
+.cproject
+.settings

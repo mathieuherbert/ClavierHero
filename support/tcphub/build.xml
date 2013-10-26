@@ -1,0 +1,63 @@
+
+<project name="tcphub" default="dist">
+
+	<property name="src" value="src" />
+	<property name="build" value="build" />
+	<property name="lib" value="lib" />
+	<property name="dist" value="dist" />
+	<property name="product.name" value="tcphub" />
+
+	<path id="classpath">
+		<fileset dir="${basedir}">
+			<include name="lib/**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- ================================== -->
+	<!--              COMPILE               -->
+	<!-- ================================== -->
+
+	<target name="compile">
+		<mkdir dir="${build}" />
+		<javac srcdir="${src}" destdir="${build}" debug="on" target="1.5">
+			<classpath refid="classpath" />
+			<include name="**/*.java" />
+		</javac>
+	</target>
+
+	<!-- ================================== -->
+	<!--               DIST                 -->
+	<!-- ================================== -->
+
+	<target name="dist" depends="compile">
+		<mkdir dir="${dist}" />
+		<jar destfile="${dist}/${product.name}.jar" basedir="${build}" />
+	</target>
+
+	<!-- =================================== -->
+	<!--                ZIP                  -->
+	<!-- =================================== -->
+
+	<target name="zip">
+		<mkdir dir="${dist}" />
+		<zip zipFile="${dist}/${product.name}-src.zip">
+			<zipfileset dir="${basedir}" prefix="${product.name}">
+				<exclude name="bin/**" />
+				<exclude name="dist/**" />
+				<exclude name="build/**" />
+				<exclude name="*.classpath" />
+				<exclude name="*.project" />
+			</zipfileset>
+		</zip>
+	</target>
+
+	<!-- ================================== -->
+	<!--               CLEAN                -->
+	<!-- ================================== -->
+
+	<target name="clean">
+		<delete dir="${build}" />
+	</target>
+
+</project>
+
