@@ -76,23 +76,8 @@ void ClavierHero::init() {
 			EMPLACEMENT_COLONNE3, EMPLACEMENT_COLONNE4);
 	afficherLigneDeJeu(EMPLACEMENT_ZONE_JEU);
 
-	char titre[4];
-	titre[0] = 'T';
-	titre[1] = 'e';
-	titre[2] = 's';
-	titre[3] = 't';
-
-	Note* tabDieses[0];
-	Note* tabNotes[5];
-
-	tabNotes[0] = new Note(new Puls(NOIRE), DO, FUN, O1, ecran, timer);
-	tabNotes[1] = new Note(new Puls(NOIRE), MI, FUN, O1, ecran, timer);
-	tabNotes[2] = new Note(new Puls(NOIRE), SOL, FDEUX, O1, ecran, timer);
-	tabNotes[3] = new Note(new Puls(NOIRE), LA, FTROIS, O1, ecran, timer);
-	tabNotes[4] = new Note(new Puls(NOIRE), SI, FQUATRE, O1, ecran, timer);
-
-	Partition* partoch = new Partition(titre, 60, tabNotes, 5, tabDieses, 0);
-	partoch->lire();
+	Bibliotheque* bibliotheque = new Bibliotheque(ecran, timer);
+	bibliotheque->auClairDeLaLune()->lire();
 }
 
 void ClavierHero::afficherLignes(int ligne1, int ligne2, int ligne3, int ligne4) {
@@ -104,8 +89,7 @@ void ClavierHero::afficherLignes(int ligne1, int ligne2, int ligne3, int ligne4)
 	}
 }
 
-void ClavierHero::afficherTouches(int ligne1, int ligne2, int ligne3,
-		int ligne4) {
+void ClavierHero::afficherTouches(int ligne1, int ligne2, int ligne3, int ligne4) {
 	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne1, "F1", JAUNE);
 	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne2, "F2", JAUNE);
 	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne3, "F3", JAUNE);

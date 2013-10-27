@@ -11,6 +11,7 @@
 #include <drivers/EcranV.h>
 #include <drivers/ClavierV.h>
 #include <sextant/Activite/Threads.h>
+#include "Bibliotheque.h"
 
 class ClavierHero : public Threads{
 private:
