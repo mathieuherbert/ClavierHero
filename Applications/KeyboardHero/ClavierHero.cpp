@@ -14,6 +14,7 @@
 #include "Partition.h"
 #include "lib/String.h"
 #include "core/GestionToucheClavier.h"
+#include "ihm/AfficherReussiteNote.h"
 
 int ClavierHero::score = 0;
 
@@ -119,68 +120,87 @@ void ClavierHero::afficherLigneDeJeu(int col) {
 
 void ClavierHero::setToucheJouee(int t) {
 
+	AfficherReussiteNote* aff = new AfficherReussiteNote(ecran);
+
 	if (t == FUN) {
 		if (ClavierHero::C1PIECEVALIDER == false) {
 			if (ClavierHero::C1DESSOUS) {
 				score += 1;
+				aff->setReussite(1);
 				ClavierHero::C1PIECEVALIDER = true;
 			} else if (ClavierHero::C1OK) {
 				score += 2;
+				aff->setReussite(2);
 				ClavierHero::C1PIECEVALIDER = true;
 			} else if (ClavierHero::C1DESSUS) {
 				score += 1;
+				aff->setReussite(1);
 				ClavierHero::C1PIECEVALIDER = true;
 			} else {
 				score -= 2;
+				aff->setReussite(0);
 			}
 		}
 	} else if (t == FDEUX) {
 		if (ClavierHero::C2PIECEVALIDER == false) {
 			if (ClavierHero::C2DESSOUS) {
 				score += 1;
+				aff->setReussite(1);
 				ClavierHero::C2PIECEVALIDER = true;
 			} else if (ClavierHero::C2OK) {
 				score += 2;
+				aff->setReussite(2);
 				ClavierHero::C2PIECEVALIDER = true;
 			} else if (ClavierHero::C2DESSUS) {
 				score += 1;
+				aff->setReussite(1);
 				ClavierHero::C2PIECEVALIDER = true;
 			} else {
 				score -= 2;
+				aff->setReussite(0);
 			}
 		}
 	} else if (t == FTROIS) {
 		if (ClavierHero::C3PIECEVALIDER == false) {
 			if (ClavierHero::C3DESSOUS) {
 				score += 1;
+				aff->setReussite(1);
 				ClavierHero::C3PIECEVALIDER = true;
 			} else if (ClavierHero::C3OK) {
 				score += 2;
+				aff->setReussite(2);
 				ClavierHero::C3PIECEVALIDER = true;
 			} else if (ClavierHero::C3DESSUS) {
 				score += 1;
+				aff->setReussite(1);
 				ClavierHero::C3PIECEVALIDER = true;
 			} else {
 				score -= 2;
+				aff->setReussite(0);
 			}
 		}
 	} else if (t == FQUATRE) {
 		if (ClavierHero::C4PIECEVALIDER == false) {
 			if (ClavierHero::C4DESSOUS) {
 				score += 1;
+				aff->setReussite(1);
 				ClavierHero::C4PIECEVALIDER = true;
 			} else if (ClavierHero::C4OK) {
 				score += 2;
+				aff->setReussite(2);
 				ClavierHero::C4PIECEVALIDER = true;
 			} else if (ClavierHero::C4DESSUS) {
 				score += 1;
+				aff->setReussite(1);
 				ClavierHero::C4PIECEVALIDER = true;
 			} else {
 				score -= 2;
+				aff->setReussite(0);
 			}
 		}
 	}
 	afficherScore();
+	aff->run();
 }
 
 void ClavierHero::afficherChiffreCommente(int l, int c, const char* label,

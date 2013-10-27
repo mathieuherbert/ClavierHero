@@ -1,8 +1,8 @@
 #ifndef HORLOGE_H
 #define HORLOGE_H
 
-#include <drivers/Ecran.h>
-#include <drivers/Clavier.h>
+#include <drivers/EcranV.h>
+#include <drivers/ClavierV.h>
 #include <sextant/types.h>
 #include <drivers/timer.h>
 
