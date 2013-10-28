@@ -25,8 +25,8 @@ private:
 public:
 	Bibliotheque(EcranV* e, Timer* t);
 
-	Partition* auClairDeLaLune();
-	Partition* superMario();
+	void auClairDeLaLune();
+	void superMario();
 };
 
 

@@ -54,12 +54,8 @@ ClavierHero::~ClavierHero() {
 }
 
 void ClavierHero::run() {
-
 	ecran->effacerEcranV(NOIR);
 	init();
-
-	//	String* string = new String("La grosse Berta");
-	//	Partition* partition = new Partition("La grosse Berta", 60, tabNotes, 5, &tab, 0);
 }
 
 void ClavierHero::afficherScore()
@@ -81,7 +77,8 @@ void ClavierHero::init() {
 	afficherLigneDeJeu(EMPLACEMENT_ZONE_JEU);
 
 	Bibliotheque* bibliotheque = new Bibliotheque(ecran, timer);
-	bibliotheque->auClairDeLaLune()->lire();
+	bibliotheque->superMario();
+
 }
 
 void ClavierHero::afficherLignes(int ligne1, int ligne2, int ligne3, int ligne4) {

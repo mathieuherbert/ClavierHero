@@ -39,9 +39,9 @@ void Partition::lire() {
 		if (ClavierHero::SCORE_TROP_BAS) {
 			break;
 		}
-		FinDePartie fin = new FinDePartie(ClavierHero::SCORE_TROP_BAS);
-		fin.afficherFin();
 	}
+	FinDePartie fin = new FinDePartie(ClavierHero::SCORE_TROP_BAS);
+	fin.afficherFin();
 }
 
 void Partition::applyDieses() {

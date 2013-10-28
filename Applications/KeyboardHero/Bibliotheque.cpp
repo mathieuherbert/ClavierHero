@@ -12,7 +12,8 @@ Bibliotheque::Bibliotheque(EcranV* e, Timer* t) {
 	timer = t;
 }
 
-Partition* Bibliotheque::auClairDeLaLune() {
+void Bibliotheque::auClairDeLaLune() {
+	ClavierHero::VAL_SCORE_INF =-6;
 	char titre[20];
 	titre[0] = 'A';
 	titre[1] = 'u';
@@ -38,25 +39,29 @@ Partition* Bibliotheque::auClairDeLaLune() {
 	Hauteur tabDieses[0];
 	Note* tabNotes[11];
 
-	tabNotes[0] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, timer);
-	tabNotes[1] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, timer);
-	tabNotes[2] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, timer);
-	tabNotes[3] = new Note(new Puls(NOIRE), RE, FDEUX, O3, ecran, timer);
+	tabNotes[0] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, new Timer());
+	tabNotes[1] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, new Timer());
+	tabNotes[2] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, new Timer());
+	tabNotes[3] = new Note(new Puls(NOIRE), RE, FDEUX, O3, ecran, new Timer());
 
-	tabNotes[4] = new Note(new Puls(BLANCHE), MI, FTROIS, O3, ecran, timer);
-	tabNotes[5] = new Note(new Puls(BLANCHE), RE, FDEUX, O3, ecran, timer);
+	tabNotes[4] = new Note(new Puls(BLANCHE), MI, FTROIS, O3, ecran, new Timer());
+	tabNotes[5] = new Note(new Puls(BLANCHE), RE, FDEUX, O3, ecran, new Timer());
 
-	tabNotes[6] = new Note(new Puls(NOIRE), DO, FUN , O3, ecran, timer);
-	tabNotes[7] = new Note(new Puls(NOIRE), MI, FTROIS , O3, ecran, timer);
-	tabNotes[8] = new Note(new Puls(NOIRE), RE, FDEUX , O3, ecran, timer);
-	tabNotes[9] = new Note(new Puls(NOIRE), RE, FDEUX , O3, ecran, timer);
+	tabNotes[6] = new Note(new Puls(NOIRE), DO, FUN , O3, ecran, new Timer());
+	tabNotes[7] = new Note(new Puls(NOIRE), MI, FTROIS , O3, ecran, new Timer());
+	tabNotes[8] = new Note(new Puls(NOIRE), RE, FDEUX , O3, ecran, new Timer());
+	tabNotes[9] = new Note(new Puls(NOIRE), RE, FDEUX , O3, ecran, new Timer());
 
-	tabNotes[10] = new Note(new Puls(NOIRE), DO, FUN , O3, ecran, timer);
+	tabNotes[10] = new Note(new Puls(NOIRE), DO, FUN , O3, ecran, new Timer());
 
-	return new Partition(titre, 100, tabNotes, 12, tabDieses, 0);
+	Partition* part = new Partition(titre, 100, tabNotes, 11, tabDieses, 0);
+	part->lire();
+
+
 }
 
-Partition* Bibliotheque::superMario() {
+void Bibliotheque::superMario() {
+	ClavierHero::VAL_SCORE_INF =-20;
 	char titre[11];
 	Hauteur tabDieses[2];
 	Note* tabNotes[47];
@@ -76,6 +81,7 @@ Partition* Bibliotheque::superMario() {
 	tabDieses[0] = DO;
 	tabDieses[1] = FA;
 
+	tabNotes[0] = new Note(new Puls(CROCHE), SOLD, FDEUX, O3, ecran, timer);
 	tabNotes[1] = new Note(new Puls(CROCHE), SOLD, FDEUX, O3, ecran, timer);
 	tabNotes[2] = new Note(new Puls(CROCHE), SOLD, FDEUX, O3, ecran, timer);
 	tabNotes[3] = new Note(new Puls(CROCHE), SOLD, FDEUX, O3, ecran, timer);
@@ -127,6 +133,7 @@ Partition* Bibliotheque::superMario() {
 	tabNotes[45] = new Note(new Puls(CROCHE), MI, FDEUX, O4, ecran, timer);
 	tabNotes[46] = new Note(new Puls(CROCHE), DO, FUN, O4, ecran, timer);
 
-	return new Partition(titre, 100, tabNotes, 47, tabDieses, 2);
+	Partition* part = new Partition(titre, 60, tabNotes, 47, tabDieses, 2);
+	part->lire();
 }
 
