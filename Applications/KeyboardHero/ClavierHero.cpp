@@ -42,7 +42,6 @@ bool ClavierHero::C4PIECEVALIDER = false;
 
 bool ClavierHero::SCORE_TROP_BAS = false;
 int ClavierHero::VAL_SCORE_INF = -150;
-
 ClavierHero::ClavierHero(EcranV *e, ClavierV *c) {
 	ecran = e;
 	clavier = c;
@@ -54,32 +53,33 @@ ClavierHero::~ClavierHero() {
 }
 
 void ClavierHero::run() {
-	while(1){
-	ecran->effacerEcranV(NOIR);
-	ecran->afficherMot("Bienvenue dans ClavierHero\nDeux chansons sont disponible \n");
-	ecran->afficherMot("a:Super Mario Bros\nb:Au Clair De La Lune\n");
-	ecran->afficherMot("Pour lancer le mode de votre choix taper la numero correspondant");
 
-	char i=clavier->getChar();
-	if(i=='a'){
-		mario();
-	}
-	else if(i=='b'){
-		lune();
-	}
-	else{
-		mario();
-	}
-	}
+
+		ecran->effacerEcranV(NOIR);
+		ecran->afficherMot(
+				"Bienvenue dans ClavierHero\nDeux chansons sont disponible \n");
+		ecran->afficherMot("l:Super Mario Bros\nm:Au Clair De La Lune\n");
+		ecran->afficherMot(
+				"Pour lancer le mode de votre choix taper la numero correspondant");
+		char i = clavier->getChar();
+		if (i == 'l') {
+			mario();
+		} else if (i == 'm') {
+			lune();
+		} else {
+			mario();
+		}
+
+
 }
 
-void ClavierHero::afficherScore()
-{
-    afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
+void ClavierHero::afficherScore() {
+	afficherChiffreCommente(ecran, 10, 65, "Score:", ClavierHero::score, 6);
 }
 
 void ClavierHero::init() {
 	ecran->effacerEcranV(NOIR);
+
 	GestionToucheClavier *lecteurClavier = new GestionToucheClavier(clavier,
 			this);
 	lecteurClavier->start("clavierHero");
@@ -93,13 +93,13 @@ void ClavierHero::init() {
 
 }
 
-void ClavierHero::mario(){
+void ClavierHero::mario() {
 	init();
 	Bibliotheque* bibliotheque = new Bibliotheque(ecran, timer);
 	bibliotheque->superMario();
 }
 
-void ClavierHero::lune(){
+void ClavierHero::lune() {
 	init();
 	Bibliotheque* bibliotheque = new Bibliotheque(ecran, timer);
 	bibliotheque->auClairDeLaLune();
@@ -114,7 +114,8 @@ void ClavierHero::afficherLignes(int ligne1, int ligne2, int ligne3, int ligne4)
 	}
 }
 
-void ClavierHero::afficherTouches(int ligne1, int ligne2, int ligne3, int ligne4) {
+void ClavierHero::afficherTouches(int ligne1, int ligne2, int ligne3,
+		int ligne4) {
 	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne1, "F1", VERT);
 	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne2, "F2", ROUGE);
 	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne3, "F3", JAUNE);
@@ -212,8 +213,8 @@ void ClavierHero::setToucheJouee(int t) {
 	aff->start("clavierHero");
 }
 
-void ClavierHero::afficherChiffreCommente(EcranV* l_ecran,int l, int c, const char* label,
-		const int valeur, const int nbChiffres) {
+void ClavierHero::afficherChiffreCommente(EcranV* l_ecran, int l, int c,
+		const char* label, const int valeur, const int nbChiffres) {
 	long nombreDeCaracteres = 0;
 	char caractereActuel = 0;
 	do {

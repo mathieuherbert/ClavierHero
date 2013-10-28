@@ -30,7 +30,7 @@ void Partition::lire() {
 	for (int i = 0; i < m_taillePartition; i++) {
 		m_partition[i]->start("clavierHero");
 		int ecartement = calculEcartement(m_partition[i]);
-		m_partition[i]->duree=ecartement;
+		m_partition[i]->duree = ecartement;
 		int from = timer->getCsecondes();
 		int to = from + ecartement;
 		while (from < to) {
@@ -42,6 +42,11 @@ void Partition::lire() {
 	}
 	FinDePartie fin = new FinDePartie(ClavierHero::SCORE_TROP_BAS);
 	fin.afficherFin();
+	int from = timer->getSecondes();
+	int to = from + 10;
+	while (from < to) {
+		from = timer->getSecondes();
+	}
 
 }
 

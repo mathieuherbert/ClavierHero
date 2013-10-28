@@ -18,6 +18,7 @@ private:
 	ClavierHero *clavierHero;
 public:
 	GestionToucheClavier(ClavierV *c, ClavierHero *ch);
+	//methode écoutant le clavier
 	void run();
 };
 
