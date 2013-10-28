@@ -42,6 +42,7 @@ void Partition::lire() {
 	}
 	FinDePartie fin = new FinDePartie(ClavierHero::SCORE_TROP_BAS);
 	fin.afficherFin();
+
 }
 
 void Partition::applyDieses() {

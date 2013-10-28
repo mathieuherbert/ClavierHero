@@ -74,6 +74,8 @@ public:
 	void afficherTouches(int ligne1, int ligne2, int ligne3, int ligne4);
 	void afficherLigneDeJeu(int colonne);
 	void setToucheJouee(int touche);
+	void mario();
+	void lune();
 };
 
 

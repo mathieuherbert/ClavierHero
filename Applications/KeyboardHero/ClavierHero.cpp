@@ -54,8 +54,23 @@ ClavierHero::~ClavierHero() {
 }
 
 void ClavierHero::run() {
+	while(1){
 	ecran->effacerEcranV(NOIR);
-	init();
+	ecran->afficherMot("Bienvenue dans ClavierHero\nDeux chansons sont disponible \n");
+	ecran->afficherMot("a:Super Mario Bros\nb:Au Clair De La Lune\n");
+	ecran->afficherMot("Pour lancer le mode de votre choix taper la numero correspondant");
+
+	char i=clavier->getChar();
+	if(i=='a'){
+		mario();
+	}
+	else if(i=='b'){
+		lune();
+	}
+	else{
+		mario();
+	}
+	}
 }
 
 void ClavierHero::afficherScore()
@@ -64,7 +79,7 @@ void ClavierHero::afficherScore()
 }
 
 void ClavierHero::init() {
-
+	ecran->effacerEcranV(NOIR);
 	GestionToucheClavier *lecteurClavier = new GestionToucheClavier(clavier,
 			this);
 	lecteurClavier->start("clavierHero");
@@ -76,9 +91,18 @@ void ClavierHero::init() {
 			EMPLACEMENT_COLONNE3, EMPLACEMENT_COLONNE4);
 	afficherLigneDeJeu(EMPLACEMENT_ZONE_JEU);
 
+}
+
+void ClavierHero::mario(){
+	init();
 	Bibliotheque* bibliotheque = new Bibliotheque(ecran, timer);
 	bibliotheque->superMario();
+}
 
+void ClavierHero::lune(){
+	init();
+	Bibliotheque* bibliotheque = new Bibliotheque(ecran, timer);
+	bibliotheque->auClairDeLaLune();
 }
 
 void ClavierHero::afficherLignes(int ligne1, int ligne2, int ligne3, int ligne4) {
