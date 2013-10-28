@@ -41,7 +41,8 @@ public:
 	static bool C3PIECEVALIDER ;
 	static bool C4PIECEVALIDER ;
 
-
+	static bool SCORE_TROP_BAS;
+	static int VAL_SCORE_INF;
 
 	static const char DESIGN_LIGNE='|';
 	static const int DESIGN_COLONNE=170;
