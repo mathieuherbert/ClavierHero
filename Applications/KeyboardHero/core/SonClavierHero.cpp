@@ -23,9 +23,8 @@ void SonClavierHero::jouer(int nFrequence){
 		int Div;
 	    int tmp;
 	       //Set the PIT to the desired frequency
-	    Div = 1193180 / nFrequence;//on defini la valeur de compte a rebours a partir de la frequence et de la vitesse de l'oscillateur
-
-
+	    //Div = 1193180 / nFrequence;//on defini la valeur de compte a rebours a partir de la frequence et de la vitesse de l'oscillateur
+	    Div = nFrequence/100;
 
 	    ecrireOctet( 0xb6,0x43);//on informe le timer 2 qu'on va lui envoyer une nouvelle valeur de compte a rebours
 
@@ -38,6 +37,7 @@ void SonClavierHero::jouer(int nFrequence){
 	     if (tmp != (tmp | 3)) {//en binaire 3 = 11
 	    	 tmp = (tmp | 3);
 	    	 // ---->>>>> il faut Žcrire 'tmp' dans le port du speaker. Voir etape 3 du fichier Sound Generatrion.doc du rŽpertoire support
+	    	 ecran->afficherMot(20,20,"sssss",BLANC);
 	    	 ecrireOctet(tmp,0x61);
 	    }
 
@@ -75,7 +75,7 @@ void SonClavierHero::compterJusquA(int seconds){
 void SonClavierHero::note(Note* note, int time){
 	jouer(puissance(note->getHauteur(),note->getOctave()));
 	//compterJusquA(time);
-	int tmp = lireOctet(0x61);
+	//int tmp = lireOctet(0x61);
 	Timer* timer = new Timer();
 	int from = timer->getCsecondes();
 	int to = from + time;
