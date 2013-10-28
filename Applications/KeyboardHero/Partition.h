@@ -12,13 +12,15 @@
 #include "lib/String.h"
 #include "Note.h"
 
+class Note;
+
 class Partition {
 private:
 	char* m_titre;
 	double m_tempo;
 	Note** m_partition;
 	int m_taillePartition;
-	Note** m_dieses;
+	Hauteur* m_dieses;
 	int m_tailleDieses;
 	Timer* timer;
 
@@ -26,7 +28,7 @@ private:
 
 
 public:
-	Partition(char* titre, int tempo,Note** partition, int taillePartition, Note** dieses, int tailleDieses);
+	Partition(char* titre, int tempo,Note** partition, int taillePartition, Hauteur* dieses, int tailleDieses);
 	long calculEcartement(Note* note);
 	//	void setDieses(int dieses[]);
 	void addNote(Note note);

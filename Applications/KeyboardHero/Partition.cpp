@@ -8,7 +8,7 @@
 #include "Partition.h"
 #include "core/Conversion.h"
 Partition::Partition(char* titre, int tempo, Note** partition,
-		int taillePartition, Note** dieses, int tailledieses) :
+		int taillePartition, Hauteur* dieses, int tailledieses) :
 	m_titre(titre), m_tempo(Conversion::fromBPMtoSec(tempo)), m_partition(
 			partition), m_taillePartition(taillePartition), m_dieses(dieses),
 			m_tailleDieses(tailledieses), timer(new Timer()) {
@@ -40,7 +40,7 @@ void Partition::lire() {
 void Partition::applyDieses() {
 	for (int j = 0; j < m_tailleDieses; j++) {
 		for (int i = 0; i < m_taillePartition; i++) {
-			if (m_partition[i]->getHauteur() == m_dieses[j]->getHauteur())
+			if (m_partition[i]->getHauteur() == m_dieses[j])
 				m_partition[i]->setDiese();
 		}
 	}
