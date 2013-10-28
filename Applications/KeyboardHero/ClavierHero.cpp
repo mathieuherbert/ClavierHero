@@ -73,6 +73,8 @@ void ClavierHero::run() {
 		//Fin de partie
 		ecran->effacerEcranV(NOIR);
 		ecran->afficherMot(15, 27, "Fin de la partie", ROUGE);
+		ecran->afficherMot(16, 27, "score: ", ROUGE);
+		ecran->afficherChiffre(16, 35, score);
 		if (score < ClavierHero::valScoreInf) {
 			ecran->afficherMot(20, 30, "Perdu !!!", ROUGE);
 		} else {
