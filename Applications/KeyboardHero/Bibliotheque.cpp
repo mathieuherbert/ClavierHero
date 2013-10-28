@@ -2,7 +2,7 @@
  * Bibliotheque.cpp
  *
  *  Created on: 27 oct. 2013
- *      Author: julienderay
+ *      Author: Julien Deray, Mathieu Cartaud, Mathieu Herbert
  */
 
 #include "Bibliotheque.h"
@@ -11,11 +11,15 @@ Bibliotheque::Bibliotheque(EcranV* e, Timer* t) {
 	ecran = e;
 	timer = t;
 }
+//On affiche le nom de la partition
 void Bibliotheque::afficherNomPartition(char* part)
 {
     ecran->afficherMot(7,60,"Partition : ",BLANC);
     ecran->afficherMot(8,60,part,BLANC);
 }
+/*
+ * Partition de la chanson Au Claire de la Lune
+ */
 void Bibliotheque::auClairDeLaLune() {
 	ClavierHero::VAL_SCORE_INF =-6;
 	char titre[20];
@@ -63,7 +67,9 @@ void Bibliotheque::auClairDeLaLune() {
 
 
 }
-
+/*
+ * Partition Super Mario
+ */
 void Bibliotheque::superMario() {
 	ClavierHero::VAL_SCORE_INF =-20;
 	char titre[11];

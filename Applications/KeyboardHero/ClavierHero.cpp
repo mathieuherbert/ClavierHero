@@ -16,7 +16,7 @@
 #include "core/GestionToucheClavier.h"
 #include "ihm/AfficherReussiteNote.h"
 #include "Bibliotheque.h"
-
+//le score
 int ClavierHero::score = 0;
 
 bool ClavierHero::C1DESSUS = false;

@@ -16,15 +16,16 @@
 #include "Partition.h"
 
 class Partition;
-
+/*
+ * Stocke les differentes partitions de l'application
+ */
 class Bibliotheque {
 private:
 	EcranV* ecran;
 	Timer* timer;
-
+	void afficherNomPartition(char* part);
 public:
 	Bibliotheque(EcranV* e, Timer* t);
-	void afficherNomPartition(char* part);
 	void auClairDeLaLune();
 	void superMario();
 };
