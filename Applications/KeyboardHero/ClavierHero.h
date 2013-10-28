@@ -24,30 +24,31 @@ public:
 	//Pour toutes les colonnes : C1Dessus => valider quelques lignes au dessus de la ligne validation
 	//C1OK => valider sur la ligne de validation
 	//C1Dessous =>valider quelques lignes en dessous de la ligne validation
-	static bool C1DESSUS ;
-	static bool C1OK ;
-	static bool C1DESSOUS ;
+	static bool c1Dessus;
+	static bool c1ok ;
+	static bool c1Dessous ;
 
-	static bool C2DESSUS ;
-	static bool C2OK ;
-	static bool C2DESSOUS ;
+	static bool c2Dessus;
+	static bool c2ok ;
+	static bool c2Dessous ;
 
-	static bool C3DESSUS ;
-	static bool C3OK ;
-	static bool C3DESSOUS ;
+	static bool c3Dessus;
+	static bool c3ok ;
+	static bool c3Dessous ;
 
-	static bool C4DESSUS ;
-	static bool C4OK ;
-	static bool C4DESSOUS ;
+	static bool c4Dessus;
+	static bool c4ok ;
+	static bool c4Dessous ;
+
 	//True si la piece de la colonne est valider
-	static bool C1PIECEVALIDER ;
-	static bool C2PIECEVALIDER ;
-	static bool C3PIECEVALIDER ;
-	static bool C4PIECEVALIDER ;
+	static bool c1PieceValider;
+	static bool c2PieceValider;
+	static bool c3PieceValider;
+	static bool c4PieceValider;
 	//si partie est perdue ou pas
-	static bool SCORE_TROP_BAS;
+	static bool scoreTropBas;
 	//Score pour lequel la partie est arrete
-	static int VAL_SCORE_INF;
+	static int valScoreInf;
 
 	static const char DESIGN_LIGNE='|';
 	static const int DESIGN_COLONNE=170;

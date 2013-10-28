@@ -110,30 +110,30 @@ void Note::run() {
 void Note::verificationDeValidationColUn(int & col, int & ligne) {
 	if (col == ClavierHero::EMPLACEMENT_COLONNE1) {
 		if (ligne == 0) {
-			ClavierHero::C1PIECEVALIDER = false;
+			ClavierHero::c1PieceValider = false;
 		}
 		if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU) {
-			ClavierHero::C1OK = true;
-			ClavierHero::C1DESSUS = false;
-			ClavierHero::C1DESSOUS = false;
+			ClavierHero::c1ok = true;
+			ClavierHero::c1Dessus= false;
+			ClavierHero::c1Dessous = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_DESSOUS) {
-			ClavierHero::C1OK = false;
-			ClavierHero::C1DESSOUS = true;
-			ClavierHero::C1DESSUS = false;
+			ClavierHero::c1ok = false;
+			ClavierHero::c1Dessous = true;
+			ClavierHero::c1Dessus = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_DESSUS) {
-			ClavierHero::C1OK = false;
-			ClavierHero::C1DESSUS = true;
-			ClavierHero::C1DESSOUS = false;
+			ClavierHero::c1ok = false;
+			ClavierHero::c1Dessus = true;
+			ClavierHero::c1Dessous = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_TROP_TARD) {
 			AfficherReussiteNote* reussiteNote = new AfficherReussiteNote(ecran);
-			if(!ClavierHero::C1PIECEVALIDER){
+			if(!ClavierHero::c1PieceValider){
 				ClavierHero::score-=2;
 				ClavierHero::afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
 			}
-			ClavierHero::C1OK = false;
-			ClavierHero::C1DESSUS = false;
-			ClavierHero::C1DESSOUS = false;
-			ClavierHero::C1PIECEVALIDER = false;
+			ClavierHero::c1ok = false;
+			ClavierHero::c1Dessus = false;
+			ClavierHero::c1Dessous = false;
+			ClavierHero::c1PieceValider = false;
 			//ClavierHero* clavier = ClavierHero::getClavierHero();
 			//clavier->afficherScore();
 			reussiteNote->setReussite(0);
@@ -147,29 +147,29 @@ void Note::verificationDeValidationColUn(int & col, int & ligne) {
 void Note::verificationDeValidationColDeux(int & col, int & ligne) {
 	if (col == ClavierHero::EMPLACEMENT_COLONNE2) {
 		if (ligne == 0) {
-			ClavierHero::C2PIECEVALIDER = false;
+			ClavierHero::c2PieceValider = false;
 		}
 		if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU) {
-			ClavierHero::C2OK = true;
-			ClavierHero::C2DESSUS = false;
-			ClavierHero::C2DESSOUS = false;
+			ClavierHero::c2ok = true;
+			ClavierHero::c2Dessus = false;
+			ClavierHero::c2Dessous = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_DESSOUS) {
-			ClavierHero::C2OK = false;
-			ClavierHero::C2DESSOUS = true;
-			ClavierHero::C2DESSUS = false;
+			ClavierHero::c2ok = false;
+			ClavierHero::c2Dessous = true;
+			ClavierHero::c2Dessus = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_DESSUS) {
-			ClavierHero::C2OK = false;
-			ClavierHero::C2DESSUS = true;
-			ClavierHero::C2DESSOUS = false;
+			ClavierHero::c2ok = false;
+			ClavierHero::c2Dessus = true;
+			ClavierHero::c2Dessous = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_TROP_TARD) {
-			if(!ClavierHero::C2PIECEVALIDER){
+			if(!ClavierHero::c2PieceValider){
 				ClavierHero::score-=2;
 				ClavierHero::afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
 			}
-			ClavierHero::C2OK = false;
-			ClavierHero::C2DESSUS = false;
-			ClavierHero::C2DESSOUS = false;
-			ClavierHero::C2PIECEVALIDER = false;
+			ClavierHero::c2ok = false;
+			ClavierHero::c2Dessus = false;
+			ClavierHero::c2Dessous = false;
+			ClavierHero::c2PieceValider = false;
 
 			AfficherReussiteNote* reussiteNote = new AfficherReussiteNote(ecran);
 			reussiteNote->setReussite(0);
@@ -183,29 +183,29 @@ void Note::verificationDeValidationColDeux(int & col, int & ligne) {
 void Note::verificationDeValidationColTrois(int & col, int & ligne) {
 	if (col == ClavierHero::EMPLACEMENT_COLONNE3) {
 		if (ligne == 0) {
-			ClavierHero::C3PIECEVALIDER = false;
+			ClavierHero::c3PieceValider = false;
 		}
 		if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU) {
-			ClavierHero::C3OK = true;
-			ClavierHero::C3DESSUS = false;
-			ClavierHero::C3DESSOUS = false;
+			ClavierHero::c3ok = true;
+			ClavierHero::c3Dessus = false;
+			ClavierHero::c3Dessous = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_DESSOUS) {
-			ClavierHero::C3OK = false;
-			ClavierHero::C3DESSOUS = true;
-			ClavierHero::C3DESSUS = false;
+			ClavierHero::c3ok = false;
+			ClavierHero::c3Dessous = true;
+			ClavierHero::c3Dessus = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_DESSUS) {
-			ClavierHero::C3OK = false;
-			ClavierHero::C3DESSUS = true;
-			ClavierHero::C3DESSOUS = false;
+			ClavierHero::c3ok = false;
+			ClavierHero::c3Dessus = true;
+			ClavierHero::c3Dessous = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_TROP_TARD) {
-			if(!ClavierHero::C3PIECEVALIDER){
+			if(!ClavierHero::c3PieceValider){
 				ClavierHero::score-=2;
 				ClavierHero::afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
 			}
-			ClavierHero::C3OK = false;
-			ClavierHero::C3DESSUS = false;
-			ClavierHero::C3DESSOUS = false;
-			ClavierHero::C3PIECEVALIDER = false;
+			ClavierHero::c3ok = false;
+			ClavierHero::c3Dessus = false;
+			ClavierHero::c3Dessous = false;
+			ClavierHero::c3PieceValider = false;
 
 			AfficherReussiteNote* reussiteNote = new AfficherReussiteNote(ecran);
 			reussiteNote->setReussite(0);
@@ -219,29 +219,29 @@ void Note::verificationDeValidationColTrois(int & col, int & ligne) {
 void Note::verificationDeValidationColQuatre(int & col, int & ligne) {
 	if (col == ClavierHero::EMPLACEMENT_COLONNE4) {
 		if (ligne == 0) {
-			ClavierHero::C4PIECEVALIDER = false;
+			ClavierHero::c4PieceValider = false;
 		}
 		if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU) {
-			ClavierHero::C4OK = true;
-			ClavierHero::C4DESSUS = false;
-			ClavierHero::C4DESSOUS = false;
+			ClavierHero::c4ok = true;
+			ClavierHero::c4Dessus = false;
+			ClavierHero::c4Dessous = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_DESSOUS) {
-			ClavierHero::C4OK = false;
-			ClavierHero::C4DESSOUS = true;
-			ClavierHero::C4DESSUS = false;
+			ClavierHero::c4ok = false;
+			ClavierHero::c4Dessous = true;
+			ClavierHero::c4Dessus = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_DESSUS) {
-			ClavierHero::C4OK = false;
-			ClavierHero::C4DESSUS = true;
-			ClavierHero::C4DESSOUS = false;
+			ClavierHero::c4ok = false;
+			ClavierHero::c4Dessus = true;
+			ClavierHero::c4Dessous = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_TROP_TARD) {
-			if(!ClavierHero::C4PIECEVALIDER){
+			if(!ClavierHero::c4PieceValider){
 				ClavierHero::score-=2;
 				ClavierHero::afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
 			}
-			ClavierHero::C4OK = false;
-			ClavierHero::C4DESSUS = false;
-			ClavierHero::C4DESSOUS = false;
-			ClavierHero::C4PIECEVALIDER = false;
+			ClavierHero::c4ok = false;
+			ClavierHero::c4Dessus = false;
+			ClavierHero::c4Dessous = false;
+			ClavierHero::c4PieceValider = false;
 			AfficherReussiteNote* reussiteNote = new AfficherReussiteNote(ecran);
 			reussiteNote->setReussite(0);
 			reussiteNote->start("clavierHero");

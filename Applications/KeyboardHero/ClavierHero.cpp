@@ -19,29 +19,29 @@
 //le score
 int ClavierHero::score = 0;
 
-bool ClavierHero::C1DESSUS = false;
-bool ClavierHero::C1OK = false;
-bool ClavierHero::C1DESSOUS = false;
+bool ClavierHero::c1Dessus = false;
+bool ClavierHero::c1ok= false;
+bool ClavierHero::c1Dessous = false;
 
-bool ClavierHero::C2DESSUS = false;
-bool ClavierHero::C2OK = false;
-bool ClavierHero::C2DESSOUS = false;
+bool ClavierHero::c2Dessus = false;
+bool ClavierHero::c2ok= false;
+bool ClavierHero::c2Dessous = false;
 
-bool ClavierHero::C3DESSUS = false;
-bool ClavierHero::C3OK = false;
-bool ClavierHero::C3DESSOUS = false;
+bool ClavierHero::c3Dessus = false;
+bool ClavierHero::c3ok= false;
+bool ClavierHero::c3Dessous = false;
 
-bool ClavierHero::C4DESSUS = false;
-bool ClavierHero::C4OK = false;
-bool ClavierHero::C4DESSOUS = false;
+bool ClavierHero::c4Dessus = false;
+bool ClavierHero::c4ok= false;
+bool ClavierHero::c4Dessous = false;
 
-bool ClavierHero::C1PIECEVALIDER = false;
-bool ClavierHero::C2PIECEVALIDER = false;
-bool ClavierHero::C3PIECEVALIDER = false;
-bool ClavierHero::C4PIECEVALIDER = false;
+bool ClavierHero::c1PieceValider = false;
+bool ClavierHero::c2PieceValider = false;
+bool ClavierHero::c3PieceValider = false;
+bool ClavierHero::c4PieceValider = false;
 
-bool ClavierHero::SCORE_TROP_BAS = false;
-int ClavierHero::VAL_SCORE_INF = -150;
+bool ClavierHero::scoreTropBas= false;
+int ClavierHero::valScoreInf= -150;
 ClavierHero::ClavierHero(EcranV *e, ClavierV *c) {
 	ecran = e;
 	clavier = c;
@@ -54,7 +54,7 @@ ClavierHero::~ClavierHero() {
 
 void ClavierHero::run() {
 
-
+		//menu de choix de partition
 		ecran->effacerEcranV(NOIR);
 		ecran->afficherMot(
 				"Bienvenue dans ClavierHero\nDeux chansons sont disponible \n");
@@ -63,15 +63,17 @@ void ClavierHero::run() {
 				"Pour lancer le mode de votre choix taper la numero correspondant");
 		char i = clavier->getChar();
 		if (i == 'l') {
+			///jeu en lui même
 			mario();
 		} else if (i == 'm') {
 			lune();
 		} else {
 			mario();
 		}
+		//Fin de partie
 		ecran->effacerEcranV(NOIR);
 		ecran->afficherMot(15, 26, "Fin de la partie", ROUGE);
-		if (score < ClavierHero::VAL_SCORE_INF) {
+		if (score < ClavierHero::valScoreInf) {
 			ecran->afficherMot(20, 30, "Perdu !!!", ROUGE);
 		} else {
 			ecran->afficherMot(20, 30, "Tu Dechires !!!", ROUGE);
@@ -84,11 +86,11 @@ void ClavierHero::afficherScore() {
 
 void ClavierHero::init() {
 	ecran->effacerEcranV(NOIR);
-
+	//gestion du clavier
 	GestionToucheClavier *lecteurClavier = new GestionToucheClavier(clavier,
 			this);
 	lecteurClavier->start("clavierHero");
-
+	//affiche les lignes
 	afficherScore();
 	afficherLignes(EMPLACEMENT_COLONNE1, EMPLACEMENT_COLONNE2,
 			EMPLACEMENT_COLONNE3, EMPLACEMENT_COLONNE4);
@@ -136,78 +138,78 @@ void ClavierHero::afficherLigneDeJeu(int col) {
 void ClavierHero::setToucheJouee(int t) {
 
 	AfficherReussiteNote* aff = new AfficherReussiteNote(ecran);
-
+	//En fonction de la touche appuyer et du positionnement des notes on incrémente ou décrémente le score avec un texte
 	if (t == FUN) {
-		if (ClavierHero::C1PIECEVALIDER == false) {
-			if (ClavierHero::C1DESSOUS) {
+		if (ClavierHero::c1PieceValider == false) {
+			if (ClavierHero::c1Dessous) {
 				score += 1;
 				aff->setReussite(1);
-				ClavierHero::C1PIECEVALIDER = true;
-			} else if (ClavierHero::C1OK) {
+				ClavierHero::c1PieceValider = true;
+			} else if (ClavierHero::c1ok) {
 				score += 2;
 				aff->setReussite(2);
-				ClavierHero::C1PIECEVALIDER = true;
-			} else if (ClavierHero::C1DESSUS) {
+				ClavierHero::c1PieceValider = true;
+			} else if (ClavierHero::c1Dessus) {
 				score += 1;
 				aff->setReussite(1);
-				ClavierHero::C1PIECEVALIDER = true;
+				ClavierHero::c1PieceValider = true;
 			} else {
 				score -= 2;
 				aff->setReussite(0);
 			}
 		}
 	} else if (t == FDEUX) {
-		if (ClavierHero::C2PIECEVALIDER == false) {
-			if (ClavierHero::C2DESSOUS) {
+		if (ClavierHero::c2PieceValider== false) {
+			if (ClavierHero::c2Dessous) {
 				score += 1;
 				aff->setReussite(1);
-				ClavierHero::C2PIECEVALIDER = true;
-			} else if (ClavierHero::C2OK) {
+				ClavierHero::c2PieceValider = true;
+			} else if (ClavierHero::c2ok) {
 				score += 2;
 				aff->setReussite(2);
-				ClavierHero::C2PIECEVALIDER = true;
-			} else if (ClavierHero::C2DESSUS) {
+				ClavierHero::c2PieceValider = true;
+			} else if (ClavierHero::c2Dessus) {
 				score += 1;
 				aff->setReussite(1);
-				ClavierHero::C2PIECEVALIDER = true;
+				ClavierHero::c2PieceValider = true;
 			} else {
 				score -= 2;
 				aff->setReussite(0);
 			}
 		}
 	} else if (t == FTROIS) {
-		if (ClavierHero::C3PIECEVALIDER == false) {
-			if (ClavierHero::C3DESSOUS) {
+		if (ClavierHero::c3PieceValider == false) {
+			if (ClavierHero::c3Dessous) {
 				score += 1;
 				aff->setReussite(1);
-				ClavierHero::C3PIECEVALIDER = true;
-			} else if (ClavierHero::C3OK) {
+				ClavierHero::c3PieceValider = true;
+			} else if (ClavierHero::c3ok) {
 				score += 2;
 				aff->setReussite(2);
-				ClavierHero::C3PIECEVALIDER = true;
-			} else if (ClavierHero::C3DESSUS) {
+				ClavierHero::c3PieceValider = true;
+			} else if (ClavierHero::c3Dessus) {
 				score += 1;
 				aff->setReussite(1);
-				ClavierHero::C3PIECEVALIDER = true;
+				ClavierHero::c3PieceValider = true;
 			} else {
 				score -= 2;
 				aff->setReussite(0);
 			}
 		}
 	} else if (t == FQUATRE) {
-		if (ClavierHero::C4PIECEVALIDER == false) {
-			if (ClavierHero::C4DESSOUS) {
+		if (ClavierHero::c4PieceValider == false) {
+			if (ClavierHero::c4Dessous) {
 				score += 1;
 				aff->setReussite(1);
-				ClavierHero::C4PIECEVALIDER = true;
-			} else if (ClavierHero::C4OK) {
+				ClavierHero::c4PieceValider = true;
+			} else if (ClavierHero::c4ok) {
 				score += 2;
 				aff->setReussite(2);
-				ClavierHero::C4PIECEVALIDER = true;
-			} else if (ClavierHero::C4DESSUS) {
+				ClavierHero::c4PieceValider = true;
+			} else if (ClavierHero::c4Dessus) {
 				score += 1;
 				aff->setReussite(1);
-				ClavierHero::C4PIECEVALIDER = true;
+				ClavierHero::c4PieceValider = true;
 			} else {
 				score -= 2;
 				aff->setReussite(0);

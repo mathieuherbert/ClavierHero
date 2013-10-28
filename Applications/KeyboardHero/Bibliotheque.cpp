@@ -21,7 +21,7 @@ void Bibliotheque::afficherNomPartition(char* part)
  * Partition de la chanson Au Claire de la Lune
  */
 void Bibliotheque::auClairDeLaLune() {
-	ClavierHero::VAL_SCORE_INF =-10;
+	ClavierHero::valScoreInf =-10;
 	char titre[20];
 	titre[0] = 'A';
 	titre[1] = 'u';
@@ -70,7 +70,7 @@ void Bibliotheque::auClairDeLaLune() {
  * Partition Super Mario
  */
 void Bibliotheque::superMario() {
-	ClavierHero::VAL_SCORE_INF =-30;
+	ClavierHero::valScoreInf =-30;
 	char titre[11];
 
 	Hauteur tabDieses[2];

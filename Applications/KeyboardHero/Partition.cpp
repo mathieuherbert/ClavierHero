@@ -35,7 +35,7 @@ void Partition::lire() {
 		while (from < to) {
 			from = timer->getCsecondes();
 		}
-		if (ClavierHero::score < ClavierHero::VAL_SCORE_INF) {
+		if (ClavierHero::score < ClavierHero::valScoreInf) {
 			break;
 		}
 	}
