@@ -69,7 +69,12 @@ void ClavierHero::run() {
 		} else {
 			mario();
 		}
-
+		ecran->effacerEcranV(NOIR);
+		if (score < ClavierHero::VAL_SCORE_INF) {
+			ecran->afficherMot(20, 30, "Perdu !!!", ROUGE);
+		} else {
+			ecran->afficherMot(20, 30, "Tu Dechires !!!", ROUGE);
+		}
 
 }
 

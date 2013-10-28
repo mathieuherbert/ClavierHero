@@ -7,7 +7,6 @@
 
 #include "Partition.h"
 #include "core/Conversion.h"
-#include "ihm/FinDePartie.h"
 
 Partition::Partition(char* titre, int tempo, Note** partition,
 		int taillePartition, Hauteur* dieses, int tailledieses) :
@@ -36,14 +35,12 @@ void Partition::lire() {
 		while (from < to) {
 			from = timer->getCsecondes();
 		}
-		if (ClavierHero::SCORE_TROP_BAS) {
+		if (ClavierHero::score < ClavierHero::VAL_SCORE_INF) {
 			break;
 		}
 	}
-	FinDePartie fin = new FinDePartie(ClavierHero::SCORE_TROP_BAS);
-	fin.afficherFin();
 	int from = timer->getSecondes();
-	int to = from + 10;
+	int to = from + 3;
 	while (from < to) {
 		from = timer->getSecondes();
 	}
