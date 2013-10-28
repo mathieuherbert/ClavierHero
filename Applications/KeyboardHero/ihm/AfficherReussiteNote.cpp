@@ -30,6 +30,7 @@ void AfficherReussiteNote::run(){
 
 void AfficherReussiteNote::afficherReussite(){
 	char* mot = selectionnerMot();
+	effacerReussite();
 	ecran->afficherMot(13, 65, mot, ROUGE);
 }
 
