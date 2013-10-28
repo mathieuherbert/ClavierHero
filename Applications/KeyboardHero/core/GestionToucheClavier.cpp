@@ -2,7 +2,7 @@
  * GestionToucheClavier.cpp
  *
  *  Created on: 25 oct. 2013
- *      Author: mathieu
+ *      Author: Julien Deray, Mathieu Cartaud, Mathieu Herbert
  */
 
 #include "GestionToucheClavier.h"

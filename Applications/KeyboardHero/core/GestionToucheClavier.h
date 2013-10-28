@@ -2,7 +2,7 @@
  * GestionToucheClavier.h
  *
  *  Created on: 25 oct. 2013
- *      Author: mathieu
+ *      Author: Julien Deray, Mathieu Cartaud, Mathieu Herbert
  */
 
 #ifndef GESTIONTOUCHECLAVIER_H_

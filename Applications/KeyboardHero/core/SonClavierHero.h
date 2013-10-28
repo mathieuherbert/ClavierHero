@@ -2,7 +2,7 @@
  * SonClavierHero.h
  *
  *  Created on: 24 oct. 2013
- *      Author: mathieu herbert
+ *      Author: Julien Deray, Mathieu Cartaud, Mathieu Herbert
  */
 
 #ifndef SONCLAVIERHERO_H_
