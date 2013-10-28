@@ -9,18 +9,18 @@
 #define HAUTEUR_H_
 //a diviser par 100
  enum  Hauteur {
-    DO = 3270,
-    DOD = 3465,
-    RE = 3671,
-    RED = 3889,
-    MI = 4120,
-    FA = 4365,
-    FAD = 4625,
-    SOL = 4900,
-    SOLD = 5191,
-    LA = 5500,
-    LAD = 5827,
-    SI = 6174,
+    DO = 16,
+    DOD = 17,
+    RE = 18,
+    RED = 19,
+    MI = 20,
+    FA = 22,
+    FAD = 23,
+    SOL = 24,
+    SOLD = 25,
+    LA = 26,
+    LAD = 27,
+    SI = 28,
     SOUPIRE = 100
 };
 

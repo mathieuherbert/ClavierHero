@@ -45,10 +45,10 @@ void SonClavierHero::jouer(int nFrequence){
 
 void SonClavierHero::stop(){
 	int tmp = lireOctet(0x61);
-	//if (tmp != (tmp & 252)) {//en binaire, 252 = 11111100
-		//ecrireOctet(tmp & 252,0x61);//on deconnecte le timer deux du speaker en mettant les deux derniers bits a 0
-		//}
-	ecrireOctet(tmp & 252,0x61);
+	if (tmp != (tmp & 252)) {//en binaire, 252 = 11111100
+		ecrireOctet(tmp & 252,0x61);//on deconnecte le timer deux du speaker en mettant les deux derniers bits a 0
+	}
+	//ecrireOctet(tmp & 252,0x61);
 }
 
 int SonClavierHero::puissance(int value, int oct){
