@@ -36,22 +36,22 @@ Partition* Bibliotheque::auClairDeLaLune() {
 	titre[19] = 'e';
 
 	Hauteur tabDieses[0];
-	Note* tabNotes[12];
+	Note* tabNotes[11];
 
+	tabNotes[0] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, timer);
 	tabNotes[1] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, timer);
 	tabNotes[2] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, timer);
-	tabNotes[3] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, timer);
-	tabNotes[4] = new Note(new Puls(NOIRE), RE, FDEUX, O3, ecran, timer);
+	tabNotes[3] = new Note(new Puls(NOIRE), RE, FDEUX, O3, ecran, timer);
 
-	tabNotes[5] = new Note(new Puls(BLANCHE), MI, FTROIS, O3, ecran, timer);
-	tabNotes[6] = new Note(new Puls(BLANCHE), RE, FDEUX, O3, ecran, timer);
+	tabNotes[4] = new Note(new Puls(BLANCHE), MI, FTROIS, O3, ecran, timer);
+	tabNotes[5] = new Note(new Puls(BLANCHE), RE, FDEUX, O3, ecran, timer);
 
-	tabNotes[7] = new Note(new Puls(NOIRE), DO, FUN , O3, ecran, timer);
-	tabNotes[8] = new Note(new Puls(NOIRE), MI, FTROIS , O3, ecran, timer);
+	tabNotes[6] = new Note(new Puls(NOIRE), DO, FUN , O3, ecran, timer);
+	tabNotes[7] = new Note(new Puls(NOIRE), MI, FTROIS , O3, ecran, timer);
+	tabNotes[8] = new Note(new Puls(NOIRE), RE, FDEUX , O3, ecran, timer);
 	tabNotes[9] = new Note(new Puls(NOIRE), RE, FDEUX , O3, ecran, timer);
-	tabNotes[10] = new Note(new Puls(NOIRE), RE, FDEUX , O3, ecran, timer);
 
-	tabNotes[11] = new Note(new Puls(NOIRE), DO, FUN , O3, ecran, timer);
+	tabNotes[10] = new Note(new Puls(NOIRE), DO, FUN , O3, ecran, timer);
 
 	return new Partition(titre, 100, tabNotes, 12, tabDieses, 0);
 }
