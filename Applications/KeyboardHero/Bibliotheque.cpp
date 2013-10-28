@@ -11,7 +11,11 @@ Bibliotheque::Bibliotheque(EcranV* e, Timer* t) {
 	ecran = e;
 	timer = t;
 }
-
+void Bibliotheque::afficherNomPartition(char* part)
+{
+    ecran->afficherMot(7,60,"Partition : ",BLANC);
+    ecran->afficherMot(8,60,part,BLANC);
+}
 void Bibliotheque::auClairDeLaLune() {
 	ClavierHero::VAL_SCORE_INF =-6;
 	char titre[20];
@@ -38,7 +42,7 @@ void Bibliotheque::auClairDeLaLune() {
 
 	Hauteur tabDieses[0];
 	Note* tabNotes[11];
-
+	afficherNomPartition("Au claire de la lune");
 	tabNotes[0] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, new Timer());
 	tabNotes[1] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, new Timer());
 	tabNotes[2] = new Note(new Puls(NOIRE), DO, FUN, O3, ecran, new Timer());
@@ -63,6 +67,7 @@ void Bibliotheque::auClairDeLaLune() {
 void Bibliotheque::superMario() {
 	ClavierHero::VAL_SCORE_INF =-20;
 	char titre[11];
+
 	Hauteur tabDieses[2];
 	Note* tabNotes[47];
 
@@ -77,7 +82,7 @@ void Bibliotheque::superMario() {
 	titre[8] = 'r';
 	titre[9] = 'i';
 	titre[10] = 'o';
-
+	afficherNomPartition("Super Mario");
 	tabDieses[0] = DO;
 	tabDieses[1] = FA;
 
