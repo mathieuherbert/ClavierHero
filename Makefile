@@ -55,7 +55,7 @@ TestAndSet thread timer TimerSpaceInvaders Trame Top\
 EcranPMF EcranVMF \
 SuperPong Raquette RandomSP Grille  Balle \
 CasePacman JeuPacman PlateauPacman LecteurClavier LecteurTouche PersonnagePacman Pacman Blinky Clyde Inky Pinky Dijkstra \
-Note SonClavierHero Soupire Partition Bibliotheque Conversion GestionToucheClavier FinDePartie AfficherReussiteNote ClavierHero
+AfficherReussiteNote Note SonClavierHero Soupire Partition Bibliotheque Conversion GestionToucheClavier FinDePartie ClavierHero
 
  
 OBJECTS=$(patsubst %,build/all-o/%.o,$(OBJECTSNAMES))					  		

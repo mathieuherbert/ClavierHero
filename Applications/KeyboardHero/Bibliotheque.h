@@ -15,6 +15,7 @@
 #include "model/Touche.h"
 #include "Partition.h"
 
+class Partition;
 class Bibliotheque {
 private:
 	EcranV* ecran;

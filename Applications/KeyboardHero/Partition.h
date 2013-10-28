@@ -12,6 +12,7 @@
 #include "lib/String.h"
 #include "Note.h"
 
+class Note;
 class Partition {
 private:
 	char* m_titre;
