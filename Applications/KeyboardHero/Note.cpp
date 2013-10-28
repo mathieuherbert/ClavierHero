@@ -96,9 +96,11 @@ int Note::getToucheCol() {
 }
 
 void Note::run() {
+	//gere le déplacement de la touche sur l ecran
 	for (int i = 0; i < ClavierHero::EMPLACEMENT_ZONE_JEU + 3; i++) {
 		int from = timer->getCsecondes();
 		int to = from + 200 / (ClavierHero::EMPLACEMENT_ZONE_JEU - 2);
+		//phase d attente avant de redescendre a novueau
 		while (from < to) {
 			from = timer->getCsecondes();
 		}
@@ -107,6 +109,9 @@ void Note::run() {
 	eraseIcon();
 }
 
+/*
+ * En fonction de la place de de la note, on modifie les variables de placement de la note
+ */
 void Note::verificationDeValidationColUn(int & col, int & ligne) {
 	if (col == ClavierHero::EMPLACEMENT_COLONNE1) {
 		if (ligne == 0) {
@@ -134,6 +139,7 @@ void Note::verificationDeValidationColUn(int & col, int & ligne) {
 			ClavierHero::c1Dessus = false;
 			ClavierHero::c1Dessous = false;
 			ClavierHero::c1PieceValider = false;
+			//cas où le joueur n a pas appuyer sur une touche
 			//ClavierHero* clavier = ClavierHero::getClavierHero();
 			//clavier->afficherScore();
 			reussiteNote->setReussite(0);
@@ -250,7 +256,9 @@ void Note::verificationDeValidationColQuatre(int & col, int & ligne) {
 	}
 
 }
-
+/*
+ * CHange la note de place sur l ecran
+ */
 void Note::setIcon(int ligne) {
 
 	int col = getToucheCol();
@@ -309,7 +317,9 @@ Couleur Note::getCouleur(int col){
 	}
 	return couleur;
 }
-
+/*
+ * Supprime la note de l ecran
+ */
 void Note::eraseIcon() {
 	int col = getToucheCol();
 	int ligne = ClavierHero::EMPLACEMENT_ZONE_JEU + 3;

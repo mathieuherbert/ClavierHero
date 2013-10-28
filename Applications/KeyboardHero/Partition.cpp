@@ -25,20 +25,24 @@ Partition::Partition(char* titre, int tempo, Note** partition,
 
 void Partition::lire() {
 	applyDieses();
-
+	//boucle sur toutes les notes de la partition
 	for (int i = 0; i < m_taillePartition; i++) {
+		//on joue la note sur l ecran
 		m_partition[i]->start("clavierHero");
 		int ecartement = calculEcartement(m_partition[i]);
 		m_partition[i]->duree = ecartement;
 		int from = timer->getCsecondes();
 		int to = from + ecartement;
+		//attente de la prochaine note
 		while (from < to) {
 			from = timer->getCsecondes();
 		}
+		//si le score est inferieur a un score voulu on arrete
 		if (ClavierHero::score < ClavierHero::valScoreInf) {
 			break;
 		}
 	}
+	//attente de fin de partie
 	int from = timer->getSecondes();
 	int to = from + 3;
 	while (from < to) {
@@ -55,7 +59,9 @@ void Partition::applyDieses() {
 		}
 	}
 }
-
+/*
+ * Calcule l ecartement entre cette note et la suivante
+ */
 long Partition::calculEcartement(Note* note) {
 	double temps = *note->getTempsNum();
 	return (long) (m_tempo * (temps / (double) MULTIPLICATEUR) * 100);
