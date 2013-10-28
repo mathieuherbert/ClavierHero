@@ -9,6 +9,7 @@
 #include "model/Hauteur.h"
 #include "model/Octave.h"
 #include "core/SonClavierHero.h"
+#include "ihm/AfficherReussiteNote.h"
 
 Note::Note(Puls* aTemps, int aHauteur, int aTouche, int anOctave,
 		EcranV *anEcran, Timer *aTimer) {
@@ -124,10 +125,15 @@ void Note::verificationDeValidationColUn(int & col, int & ligne) {
 			ClavierHero::C1DESSUS = true;
 			ClavierHero::C1DESSOUS = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_TROP_TARD) {
+			AfficherReussiteNote* reussiteNote = new AfficherReussiteNote(ecran);
 			ClavierHero::C1OK = false;
 			ClavierHero::C1DESSUS = false;
 			ClavierHero::C1DESSOUS = false;
 			ClavierHero::C1PIECEVALIDER = false;
+			//ClavierHero* clavier = ClavierHero::getClavierHero();
+			//clavier->afficherScore();
+			reussiteNote->setReussite(0);
+			reussiteNote->start("clavierHero");
 		}
 
 	}
@@ -156,6 +162,10 @@ void Note::verificationDeValidationColDeux(int & col, int & ligne) {
 			ClavierHero::C2DESSUS = false;
 			ClavierHero::C2DESSOUS = false;
 			ClavierHero::C2PIECEVALIDER = false;
+
+			AfficherReussiteNote* reussiteNote = new AfficherReussiteNote(ecran);
+			reussiteNote->setReussite(0);
+			reussiteNote->start("clavierHero");
 		}
 
 	}
@@ -184,6 +194,10 @@ void Note::verificationDeValidationColTrois(int & col, int & ligne) {
 			ClavierHero::C3DESSUS = false;
 			ClavierHero::C3DESSOUS = false;
 			ClavierHero::C3PIECEVALIDER = false;
+
+			AfficherReussiteNote* reussiteNote = new AfficherReussiteNote(ecran);
+			reussiteNote->setReussite(0);
+			reussiteNote->start("clavierHero");
 		}
 
 	}
@@ -212,6 +226,9 @@ void Note::verificationDeValidationColQuatre(int & col, int & ligne) {
 			ClavierHero::C4DESSUS = false;
 			ClavierHero::C4DESSOUS = false;
 			ClavierHero::C4PIECEVALIDER = false;
+			AfficherReussiteNote* reussiteNote = new AfficherReussiteNote(ecran);
+			reussiteNote->setReussite(0);
+			reussiteNote->start("clavierHero");
 		}
 
 	}

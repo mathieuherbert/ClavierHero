@@ -7,6 +7,8 @@
 
 #include "Partition.h"
 #include "core/Conversion.h"
+#include "ihm/FinDePartie.h"
+
 Partition::Partition(char* titre, int tempo, Note** partition,
 		int taillePartition, Hauteur* dieses, int tailledieses) :
 	m_titre(titre), m_tempo(Conversion::fromBPMtoSec(tempo)), m_partition(
@@ -34,6 +36,11 @@ void Partition::lire() {
 		while (from < to) {
 			from = timer->getCsecondes();
 		}
+		if (ClavierHero::SCORE_TROP_BAS) {
+			break;
+		}
+		FinDePartie fin = new FinDePartie(ClavierHero::SCORE_TROP_BAS);
+		fin.afficherFin();
 	}
 }
 

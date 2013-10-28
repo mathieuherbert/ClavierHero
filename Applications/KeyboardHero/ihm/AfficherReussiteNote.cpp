@@ -22,7 +22,7 @@ void AfficherReussiteNote::run(){
 
 	int temp2=0;
 	temp2=timer->getSecondes();
-	while(temp2 < temp+2){
+	while(temp2 < temp+1){
 		temp2=timer->getSecondes();
 	}
 	effacerReussite();

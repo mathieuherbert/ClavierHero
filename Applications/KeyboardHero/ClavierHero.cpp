@@ -15,6 +15,7 @@
 #include "lib/String.h"
 #include "core/GestionToucheClavier.h"
 #include "ihm/AfficherReussiteNote.h"
+#include "Bibliotheque.h"
 
 int ClavierHero::score = 0;
 
@@ -38,6 +39,9 @@ bool ClavierHero::C1PIECEVALIDER = false;
 bool ClavierHero::C2PIECEVALIDER = false;
 bool ClavierHero::C3PIECEVALIDER = false;
 bool ClavierHero::C4PIECEVALIDER = false;
+
+bool ClavierHero::SCORE_TROP_BAS = false;
+int ClavierHero::VAL_SCORE_INF = -150;
 
 ClavierHero::ClavierHero(EcranV *e, ClavierV *c) {
 	ecran = e;
@@ -184,7 +188,7 @@ void ClavierHero::setToucheJouee(int t) {
 		}
 	}
 	afficherScore();
-	aff->run();
+	aff->start("clavierHero");
 }
 
 void ClavierHero::afficherChiffreCommente(int l, int c, const char* label,
