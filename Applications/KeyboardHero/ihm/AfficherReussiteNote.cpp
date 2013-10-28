@@ -38,9 +38,9 @@ char* AfficherReussiteNote::selectionnerMot(){
 	if (reussite == 2) {
 		mot = "Perfect";
 	} else if (reussite == 1) {
-		mot = "Not Bad";
+		mot = "Good";
 	} else if (reussite == 0) {
-		mot = "Very Bad";
+		mot = "Bad";
 	}
 	return mot;
 }

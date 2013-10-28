@@ -16,6 +16,7 @@
 #include "lib/String.h"
 #include "ClavierHero.h"
 #include <sextant/Activite/Threads.h>
+#include "sextant/types.h"
 
 class Note : public Threads {
 private:
@@ -31,6 +32,7 @@ private:
     void verificationDeValidationColDeux(int & col, int & ligne);
     void verificationDeValidationColTrois(int & col, int & ligne);
     void verificationDeValidationColQuatre(int & col, int & ligne);
+    Couleur getCouleur(int col);
 public:
     int duree;
     Note(Puls *temps, int hauteur, int touche, int octave, EcranV *ecran, Timer *timer);

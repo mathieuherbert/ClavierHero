@@ -83,23 +83,23 @@ void ClavierHero::init() {
 
 void ClavierHero::afficherLignes(int ligne1, int ligne2, int ligne3, int ligne4) {
 	for (int lig = 0; lig < LIGNES; ++lig) {
-		ecran->afficherCaractere(lig, ligne1, BLANC, NOIR, DESIGN_LIGNE);
-		ecran->afficherCaractere(lig, ligne2, BLANC, NOIR, DESIGN_LIGNE);
-		ecran->afficherCaractere(lig, ligne3, BLANC, NOIR, DESIGN_LIGNE);
-		ecran->afficherCaractere(lig, ligne4, BLANC, NOIR, DESIGN_LIGNE);
+		ecran->afficherCaractere(lig, ligne1, VERT, NOIR, DESIGN_LIGNE);
+		ecran->afficherCaractere(lig, ligne2, ROUGE, NOIR, DESIGN_LIGNE);
+		ecran->afficherCaractere(lig, ligne3, JAUNE, NOIR, DESIGN_LIGNE);
+		ecran->afficherCaractere(lig, ligne4, BLEU, NOIR, DESIGN_LIGNE);
 	}
 }
 
 void ClavierHero::afficherTouches(int ligne1, int ligne2, int ligne3, int ligne4) {
-	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne1, "F1", JAUNE);
-	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne2, "F2", JAUNE);
+	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne1, "F1", VERT);
+	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne2, "F2", ROUGE);
 	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne3, "F3", JAUNE);
-	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne4, "F4", JAUNE);
+	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne4, "F4", BLEU_LEGER);
 }
 
 void ClavierHero::afficherLigneDeJeu(int col) {
 	for (int lig = 0; lig < COLONNES - 15; ++lig) {
-		ecran->afficherCaractere(col, lig, JAUNE, NOIR, DESIGN_COLONNE);
+		ecran->afficherCaractere(col, lig, BLANC, NOIR, DESIGN_COLONNE);
 	}
 }
 

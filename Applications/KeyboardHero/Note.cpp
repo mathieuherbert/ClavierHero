@@ -238,6 +238,7 @@ void Note::verificationDeValidationColQuatre(int & col, int & ligne) {
 void Note::setIcon(int ligne) {
 
 	int col = getToucheCol();
+	Couleur couleur = getCouleur(col);
 	verificationDeValidationColUn(col, ligne);
 	verificationDeValidationColDeux(col, ligne);
 	verificationDeValidationColTrois(col, ligne);
@@ -248,74 +249,90 @@ void Note::setIcon(int ligne) {
 	}
 	ecran->afficherCaractere(ligne - 3, col - 2, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne - 3, col - 1, NOIR, NOIR, 176);
-	ecran->afficherCaractere(ligne - 3, col, BLANC, NOIR,
+	ecran->afficherCaractere(ligne - 3, col, couleur, NOIR,
 			ClavierHero::DESIGN_LIGNE);
 	ecran->afficherCaractere(ligne - 3, col + 1, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne - 3, col + 2, NOIR, NOIR, 176);
 
 	ecran->afficherCaractere(ligne - 2, col - 2, NOIR, NOIR, 176);
-	ecran->afficherCaractere(ligne - 2, col - 1, BLANC, NOIR, 176);
-	ecran->afficherCaractere(ligne - 2, col, BLANC, NOIR, 176);
-	ecran->afficherCaractere(ligne - 2, col + 1, BLANC, NOIR, 176);
+	ecran->afficherCaractere(ligne - 2, col - 1, couleur, NOIR, 176);
+	ecran->afficherCaractere(ligne - 2, col, couleur, NOIR, 176);
+	ecran->afficherCaractere(ligne - 2, col + 1, couleur, NOIR, 176);
 	ecran->afficherCaractere(ligne - 2, col + 2, NOIR, NOIR, 176);
 
-	ecran->afficherCaractere(ligne - 1, col - 2, BLANC, NOIR, 176);
-	ecran->afficherCaractere(ligne - 1, col - 1, BLANC, NOIR, 176);
-	ecran->afficherCaractere(ligne - 1, col, BLANC, NOIR, 176);
-	ecran->afficherCaractere(ligne - 1, col + 1, BLANC, NOIR, 176);
-	ecran->afficherCaractere(ligne - 1, col + 2, BLANC, NOIR, 176);
+	ecran->afficherCaractere(ligne - 1, col - 2, couleur, NOIR, 176);
+	ecran->afficherCaractere(ligne - 1, col - 1, couleur, NOIR, 176);
+	ecran->afficherCaractere(ligne - 1, col, couleur, NOIR, 176);
+	ecran->afficherCaractere(ligne - 1, col + 1, couleur, NOIR, 176);
+	ecran->afficherCaractere(ligne - 1, col + 2, couleur, NOIR, 176);
 
 	ecran->afficherCaractere(ligne, col - 2, NOIR, NOIR, 176);
-	ecran->afficherCaractere(ligne, col - 1, BLANC, NOIR, 176);
-	ecran->afficherCaractere(ligne, col, BLANC, NOIR, 176);
-	ecran->afficherCaractere(ligne, col + 1, BLANC, NOIR, 176);
+	ecran->afficherCaractere(ligne, col - 1, couleur, NOIR, 176);
+	ecran->afficherCaractere(ligne, col, couleur, NOIR, 176);
+	ecran->afficherCaractere(ligne, col + 1, couleur, NOIR, 176);
 	ecran->afficherCaractere(ligne, col + 2, NOIR, NOIR, 176);
 
 	ecran->afficherCaractere(ligne + 1, col - 2, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne + 1, col - 1, NOIR, NOIR, 176);
-	ecran->afficherCaractere(ligne + 1, col, BLANC, NOIR,
+	ecran->afficherCaractere(ligne + 1, col, couleur, NOIR,
 			ClavierHero::DESIGN_LIGNE);
 	ecran->afficherCaractere(ligne + 1, col + 1, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne + 1, col + 2, NOIR, NOIR, 176);
 }
 
+Couleur Note::getCouleur(int col){
+	Couleur couleur;
+	if (col == ClavierHero::EMPLACEMENT_COLONNE1) {
+		couleur = VERT;
+	} else if (col == ClavierHero::EMPLACEMENT_COLONNE2) {
+		couleur = ROUGE;
+	} else if (col == ClavierHero::EMPLACEMENT_COLONNE3) {
+		couleur = JAUNE;
+	} else if (col == ClavierHero::EMPLACEMENT_COLONNE4) {
+		couleur = BLEU_LEGER;
+	}
+	return couleur;
+}
+
 void Note::eraseIcon() {
 	int col = getToucheCol();
 	int ligne = ClavierHero::EMPLACEMENT_ZONE_JEU + 3;
-	ecran->afficherCaractere(ligne - 3, col - 2, JAUNE, NOIR,
+	ecran->afficherCaractere(ligne - 3, col - 2, BLANC, NOIR,
 			ClavierHero::DESIGN_COLONNE);
-	ecran->afficherCaractere(ligne - 3, col - 1, JAUNE, NOIR,
+	ecran->afficherCaractere(ligne - 3, col - 1, BLANC, NOIR,
 			ClavierHero::DESIGN_COLONNE);
-	ecran->afficherCaractere(ligne - 3, col, JAUNE, NOIR,
+	ecran->afficherCaractere(ligne - 3, col, BLANC, NOIR,
 			ClavierHero::DESIGN_COLONNE);
-	ecran->afficherCaractere(ligne - 3, col + 1, JAUNE, NOIR,
+	ecran->afficherCaractere(ligne - 3, col + 1, BLANC, NOIR,
 			ClavierHero::DESIGN_COLONNE);
-	ecran->afficherCaractere(ligne - 3, col + 2, JAUNE, NOIR,
+	ecran->afficherCaractere(ligne - 3, col + 2, BLANC, NOIR,
 			ClavierHero::DESIGN_COLONNE);
+
+	Couleur couleur = getCouleur(col);
 
 	ecran->afficherCaractere(ligne - 2, col - 2, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne - 2, col - 1, NOIR, NOIR, 176);
-	ecran->afficherCaractere(ligne - 2, col, BLANC, NOIR,
+	ecran->afficherCaractere(ligne - 2, col, couleur, NOIR,
 			ClavierHero::DESIGN_LIGNE);
 	ecran->afficherCaractere(ligne - 2, col + 1, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne - 2, col + 2, NOIR, NOIR, 176);
 
 	ecran->afficherCaractere(ligne - 1, col - 2, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne - 1, col - 1, NOIR, NOIR, 176);
-	ecran->afficherCaractere(ligne - 1, col, BLANC, NOIR,
+	ecran->afficherCaractere(ligne - 1, col, couleur, NOIR,
 			ClavierHero::DESIGN_LIGNE);
 	ecran->afficherCaractere(ligne - 1, col + 1, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne - 1, col + 2, NOIR, NOIR, 176);
 
 	ecran->afficherCaractere(ligne, col - 2, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne, col - 1, NOIR, NOIR, 176);
-	ecran->afficherCaractere(ligne, col, BLANC, NOIR, ClavierHero::DESIGN_LIGNE);
+	ecran->afficherCaractere(ligne, col, couleur, NOIR, ClavierHero::DESIGN_LIGNE);
 	ecran->afficherCaractere(ligne, col + 1, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne, col + 2, NOIR, NOIR, 176);
 
 	ecran->afficherCaractere(ligne + 1, col - 2, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne + 1, col - 1, NOIR, NOIR, 176);
-	ecran->afficherMot(ClavierHero::LIGNE_AFFICHAGE_TOUCHE, col, "F?", JAUNE);
+	ecran->afficherMot(ClavierHero::LIGNE_AFFICHAGE_TOUCHE, col, "F?", couleur);
 	ecran->afficherCaractere(ligne + 1, col + 1, NOIR, NOIR, 176);
 	ecran->afficherCaractere(ligne + 1, col + 2, NOIR, NOIR, 176);
 }
