@@ -21,6 +21,9 @@ private:
 	Timer *timer;
 
 public:
+	//Pour toutes les colonnes : C1Dessus => valider quelques lignes au dessus de la ligne validation
+	//C1OK => valider sur la ligne de validation
+	//C1Dessous =>valider quelques lignes en dessous de la ligne validation
 	static bool C1DESSUS ;
 	static bool C1OK ;
 	static bool C1DESSOUS ;
@@ -36,13 +39,14 @@ public:
 	static bool C4DESSUS ;
 	static bool C4OK ;
 	static bool C4DESSOUS ;
-
+	//True si la piece de la colonne est valider
 	static bool C1PIECEVALIDER ;
 	static bool C2PIECEVALIDER ;
 	static bool C3PIECEVALIDER ;
 	static bool C4PIECEVALIDER ;
-
+	//si partie est perdue ou pas
 	static bool SCORE_TROP_BAS;
+	//Score pour lequel la partie est arrete
 	static int VAL_SCORE_INF;
 
 	static const char DESIGN_LIGNE='|';

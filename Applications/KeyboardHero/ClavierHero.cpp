@@ -70,7 +70,6 @@ void ClavierHero::run() {
 			mario();
 		}
 
-
 }
 
 void ClavierHero::afficherScore() {
