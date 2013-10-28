@@ -2,7 +2,7 @@
  * ClavierHero.cpp
  *
  *  Created on: 23 oct. 2013
- *      Author: mathieu
+ *      Author: Julien Deray, Mathieu Cartaud, Mathieu Herbert
  */
 
 #include "ClavierHero.h"

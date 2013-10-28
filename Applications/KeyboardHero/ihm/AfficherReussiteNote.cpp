@@ -8,14 +8,16 @@
 #include "AfficherReussiteNote.h"
 #include "lib/String.h"
 #include "Applications/Horloge/Horloge.h"
-
+/*
+ * Affiche Perfect or Good or Bad en fonction de la synchronisation entre l'appuie de la touche et le passage sur la ligne de validation
+ */
 AfficherReussiteNote::AfficherReussiteNote(EcranV* e){
 	ecran = e;
 }
 
 void AfficherReussiteNote::run(){
 	Timer* timer = new Timer();
-
+	//affiche le texte pendant 1 seconde
 	afficherReussite();
 	int temp=0;
 	temp=timer->getSecondes();
@@ -25,6 +27,7 @@ void AfficherReussiteNote::run(){
 	while(temp2 < temp+1){
 		temp2=timer->getSecondes();
 	}
+	//effacement du texte
 	effacerReussite();
 }
 
