@@ -2,7 +2,7 @@
  * Conversion.h
  *
  *  Created on: 20 oct. 2013
- *      Author: julienderay
+ *      Author: Julien Deray, Mathieu Cartaud, Mathieu Herbert
  */
 
 #ifndef CONVERSION_H_

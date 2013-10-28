@@ -24,7 +24,7 @@ private:
 
 public:
 	Bibliotheque(EcranV* e, Timer* t);
-
+	void afficherNomPartition(char* part);
 	void auClairDeLaLune();
 	void superMario();
 };

@@ -2,7 +2,7 @@
  * Partition.cpp
  *
  *  Created on: 20 oct. 2013
- *      Author: julienderay
+ *      Author: Julien Deray, Mathieu Cartaud, Mathieu Herbert
  */
 
 #include "Partition.h"

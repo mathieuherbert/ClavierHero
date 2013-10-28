@@ -2,7 +2,7 @@
  * Note.cpp
  *
  *  Created on: 20 oct. 2013
- *      Author: julienderay
+ *      Author: Julien Deray, Mathieu Cartaud, Mathieu Herbert
  */
 
 #include "Note.h"
@@ -126,6 +126,10 @@ void Note::verificationDeValidationColUn(int & col, int & ligne) {
 			ClavierHero::C1DESSOUS = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_TROP_TARD) {
 			AfficherReussiteNote* reussiteNote = new AfficherReussiteNote(ecran);
+			if(!ClavierHero::C1PIECEVALIDER){
+				ClavierHero::score-=2;
+				ClavierHero::afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
+			}
 			ClavierHero::C1OK = false;
 			ClavierHero::C1DESSUS = false;
 			ClavierHero::C1DESSOUS = false;
@@ -158,6 +162,10 @@ void Note::verificationDeValidationColDeux(int & col, int & ligne) {
 			ClavierHero::C2DESSUS = true;
 			ClavierHero::C2DESSOUS = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_TROP_TARD) {
+			if(!ClavierHero::C2PIECEVALIDER){
+				ClavierHero::score-=2;
+				ClavierHero::afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
+			}
 			ClavierHero::C2OK = false;
 			ClavierHero::C2DESSUS = false;
 			ClavierHero::C2DESSOUS = false;
@@ -190,6 +198,10 @@ void Note::verificationDeValidationColTrois(int & col, int & ligne) {
 			ClavierHero::C3DESSUS = true;
 			ClavierHero::C3DESSOUS = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_TROP_TARD) {
+			if(!ClavierHero::C3PIECEVALIDER){
+				ClavierHero::score-=2;
+				ClavierHero::afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
+			}
 			ClavierHero::C3OK = false;
 			ClavierHero::C3DESSUS = false;
 			ClavierHero::C3DESSOUS = false;
@@ -222,6 +234,10 @@ void Note::verificationDeValidationColQuatre(int & col, int & ligne) {
 			ClavierHero::C4DESSUS = true;
 			ClavierHero::C4DESSOUS = false;
 		} else if (ligne == ClavierHero::EMPLACEMENT_ZONE_JEU_TROP_TARD) {
+			if(!ClavierHero::C4PIECEVALIDER){
+				ClavierHero::score-=2;
+				ClavierHero::afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
+			}
 			ClavierHero::C4OK = false;
 			ClavierHero::C4DESSUS = false;
 			ClavierHero::C4DESSOUS = false;

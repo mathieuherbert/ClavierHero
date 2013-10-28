@@ -2,7 +2,7 @@
  * ClavierHero.h
  *
  *  Created on: 23 oct. 2013
- *      Author: mathieu
+ *      Author: Julien Deray, Mathieu Cartaud, Mathieu Herbert
  */
 
 #ifndef CLAVIERHERO_H_
@@ -68,7 +68,7 @@ public:
 	~ClavierHero();
 	void init();
 	void run();
-	void afficherChiffreCommente(int l, int c, const char* label,
+	static void afficherChiffreCommente(EcranV* l_ecran,int l, int c, const char* label,
 			const int valeur, const int nbChiffres);
 	void afficherLignes(int ligne1, int ligne2, int ligne3, int ligne4);
 	void afficherTouches(int ligne1, int ligne2, int ligne3, int ligne4);

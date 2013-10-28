@@ -60,7 +60,7 @@ void ClavierHero::run() {
 
 void ClavierHero::afficherScore()
 {
-    afficherChiffreCommente(10, 65, "Score:", ClavierHero::score, 6);
+    afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
 }
 
 void ClavierHero::init() {
@@ -188,7 +188,7 @@ void ClavierHero::setToucheJouee(int t) {
 	aff->start("clavierHero");
 }
 
-void ClavierHero::afficherChiffreCommente(int l, int c, const char* label,
+void ClavierHero::afficherChiffreCommente(EcranV* l_ecran,int l, int c, const char* label,
 		const int valeur, const int nbChiffres) {
 	long nombreDeCaracteres = 0;
 	char caractereActuel = 0;
@@ -198,7 +198,7 @@ void ClavierHero::afficherChiffreCommente(int l, int c, const char* label,
 	} while (caractereActuel != '\0'); // On boucle tant qu'on n'est pas arriv� � l'\0
 	nombreDeCaracteres--; // On retire 1 caract�re de long pour ne pas compter l'\0
 
-	ecran->afficherMot(l, c, label, JAUNE);
+	l_ecran->afficherMot(l, c, label, JAUNE);
 
 	bool negatif = valeur < 0;
 	int tailleChiffre = 6, exposant = 1000000;
@@ -211,7 +211,7 @@ void ClavierHero::afficherChiffreCommente(int l, int c, const char* label,
 
 	for (int i = c + nombreDeCaracteres; i < c + nombreDeCaracteres
 			+ nbChiffres; i++)
-		ecran->afficherCaractere(l, i, NOIR, NOIR, ' ');
-	ecran->afficherChiffre(l, c + nombreDeCaracteres + nbChiffres
+		l_ecran->afficherCaractere(l, i, NOIR, NOIR, ' ');
+	l_ecran->afficherChiffre(l, c + nombreDeCaracteres + nbChiffres
 			- tailleChiffre, valeur);
 }
