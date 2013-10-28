@@ -6,7 +6,7 @@
  */
 
 #include "Bibliotheque.h"
-
+#include "core/SonClavierHero.h"
 Bibliotheque::Bibliotheque(EcranV* e, Timer* t) {
 	ecran = e;
 	timer = t;
@@ -64,6 +64,9 @@ void Bibliotheque::auClairDeLaLune() {
 
 	Partition* part = new Partition(titre, 100, tabNotes, 11, tabDieses, 0);
 	part->lire();
+
+	SonClavierHero* son = new SonClavierHero(ecran,tabNotes[0],1 );
+	son->stop();
 
 }
 /*
@@ -145,5 +148,8 @@ void Bibliotheque::superMario() {
 
 	Partition* part = new Partition(titre, 60, tabNotes, 47, tabDieses, 2);
 	part->lire();
+
+	SonClavierHero* son = new SonClavierHero(ecran,tabNotes[0],1 );
+	son->stop();
 }
 

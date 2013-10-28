@@ -69,7 +69,7 @@ void SonClavierHero::compterJusquA(int seconds){
 	while(temp2<temp+seconds){
 		temp2=timer->getSecondes();
 	}
-	//killsoft();
+	stop();
 }
 
 void SonClavierHero::note(Note* note, int time){
