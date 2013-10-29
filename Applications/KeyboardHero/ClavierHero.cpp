@@ -61,7 +61,7 @@ ClavierHero::~ClavierHero() {
 }
 
 void ClavierHero::run() {
-	ecran->effacerEcranV(NOIR);
+	ecran->effacerEcranV(ROUGE);
 	SpashScreen::printSplashScreen(ecran);
 		Timer* timer = new Timer();
 		int from = timer->getSecondes();
