@@ -16,6 +16,7 @@
 #include "core/GestionToucheClavier.h"
 #include "ihm/AfficherReussiteNote.h"
 #include "Bibliotheque.h"
+#include "ihm/AffichageFin.h"
 //le score
 int ClavierHero::score = 0;
 int ClavierHero::valScoreInf = -150;
@@ -81,9 +82,11 @@ void ClavierHero::run() {
 		ecran->afficherMot(16, 27, "score: ", ROUGE);
 		ecran->afficherChiffre(16, 35, score);
 		if (score < ClavierHero::valScoreInf) {
-			ecran->afficherMot(20, 30, "Perdu !!!", ROUGE);
+			AffichageFin::afficherMauvaiseFin(ecran);
+			//ecran->afficherMot(20, 30, "Perdu !!!", ROUGE);
 		} else {
-			ecran->afficherMot(20, 30, "Tu Dechires !!!", ROUGE);
+			AffichageFin::afficherBonneFin(ecran);
+			//ecran->afficherMot(20, 30, "Tu Dechires !!!", ROUGE);
 		}
 }
 

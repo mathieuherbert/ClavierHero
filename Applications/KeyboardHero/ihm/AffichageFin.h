@@ -10,7 +10,7 @@
 
 #include "drivers/ClavierV.h"
 
-static class AffichageFin {
+class AffichageFin {
 public:
 	static void afficherBonneFin(EcranV* e);
 	static void afficherMauvaiseFin(EcranV* e);
