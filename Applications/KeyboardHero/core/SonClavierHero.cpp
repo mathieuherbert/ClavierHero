@@ -37,7 +37,6 @@ void SonClavierHero::jouer(int nFrequence){
 	     if (tmp != (tmp | 3)) {//en binaire 3 = 11
 	    	 tmp = (tmp | 3);
 	    	 // ---->>>>> il faut Žcrire 'tmp' dans le port du speaker. Voir etape 3 du fichier Sound Generatrion.doc du rŽpertoire support
-	    	 ecran->afficherMot(20,20,"sssss",BLANC);
 	    	 ecrireOctet(tmp,0x61);
 	    }
 
