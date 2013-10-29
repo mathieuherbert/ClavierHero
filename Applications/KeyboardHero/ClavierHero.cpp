@@ -17,6 +17,8 @@
 #include "ihm/AfficherReussiteNote.h"
 #include "Bibliotheque.h"
 #include "ihm/AffichageFin.h"
+#include "ihm/SplashScreen.h"
+
 //le score
 int ClavierHero::score = 0;
 int ClavierHero::valScoreInf = -150;
@@ -59,6 +61,14 @@ ClavierHero::~ClavierHero() {
 }
 
 void ClavierHero::run() {
+	ecran->effacerEcranV(NOIR);
+	SpashScreen::printSplashScreen(ecran);
+		Timer* timer = new Timer();
+		int from = timer->getSecondes();
+		int to = from + 5;
+		while (from < to) {
+			from = timer->getSecondes();
+		}
 
 		//menu de choix de partition
 		ecran->effacerEcranV(NOIR);

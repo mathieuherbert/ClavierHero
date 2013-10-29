@@ -263,37 +263,37 @@ void AffichageFin::afficherMauvaiseFin(EcranV* e){
 	e->afficherCaractere(9, 40, ROUGE, NOIR, 219);
 
 	//smiley
-		e->afficherCaractere(17, 65, ROUGE, NOIR, 219);
-		e->afficherCaractere(18, 65, ROUGE, NOIR, 219);
-		e->afficherCaractere(19, 65, ROUGE, NOIR, 219);
-		e->afficherCaractere(20, 65, ROUGE, NOIR, 219);
+	e->afficherCaractere(17, 65, ROUGE, NOIR, 219);
+	e->afficherCaractere(18, 65, ROUGE, NOIR, 219);
+	e->afficherCaractere(19, 65, ROUGE, NOIR, 219);
+	e->afficherCaractere(20, 65, ROUGE, NOIR, 219);
 
-		e->afficherCaractere(21, 66, ROUGE, NOIR, 219);
-		e->afficherCaractere(16, 66, ROUGE, NOIR, 219);
+	e->afficherCaractere(21, 66, ROUGE, NOIR, 219);
+	e->afficherCaractere(16, 66, ROUGE, NOIR, 219);
 
-		e->afficherCaractere(15, 67, ROUGE, NOIR, 219);
-		e->afficherCaractere(17, 67, ROUGE, NOIR, 219);
-		e->afficherCaractere(20, 67, ROUGE, NOIR, 219);
-		e->afficherCaractere(22, 67, ROUGE, NOIR, 219);
+	e->afficherCaractere(15, 67, ROUGE, NOIR, 219);
+	e->afficherCaractere(17, 67, ROUGE, NOIR, 219);
+	e->afficherCaractere(20, 67, ROUGE, NOIR, 219);
+	e->afficherCaractere(22, 67, ROUGE, NOIR, 219);
 
-		e->afficherCaractere(15, 68, ROUGE, NOIR, 219);
-		e->afficherCaractere(19, 68, ROUGE, NOIR, 219);
-		e->afficherCaractere(22, 68, ROUGE, NOIR, 219);
+	e->afficherCaractere(15, 68, ROUGE, NOIR, 219);
+	e->afficherCaractere(19, 68, ROUGE, NOIR, 219);
+	e->afficherCaractere(22, 68, ROUGE, NOIR, 219);
 
-		e->afficherCaractere(15, 69, ROUGE, NOIR, 219);
-		e->afficherCaractere(19, 69, ROUGE, NOIR, 219);
-		e->afficherCaractere(22, 69, ROUGE, NOIR, 219);
+	e->afficherCaractere(15, 69, ROUGE, NOIR, 219);
+	e->afficherCaractere(19, 69, ROUGE, NOIR, 219);
+	e->afficherCaractere(22, 69, ROUGE, NOIR, 219);
 
-		e->afficherCaractere(15, 70, ROUGE, NOIR, 219);
-		e->afficherCaractere(17, 70, ROUGE, NOIR, 219);
-		e->afficherCaractere(20, 70, ROUGE, NOIR, 219);
-		e->afficherCaractere(22, 70, ROUGE, NOIR, 219);
+	e->afficherCaractere(15, 70, ROUGE, NOIR, 219);
+	e->afficherCaractere(17, 70, ROUGE, NOIR, 219);
+	e->afficherCaractere(20, 70, ROUGE, NOIR, 219);
+	e->afficherCaractere(22, 70, ROUGE, NOIR, 219);
 
-		e->afficherCaractere(16, 71, ROUGE, NOIR, 219);
-		e->afficherCaractere(21, 71, ROUGE, NOIR, 219);
+	e->afficherCaractere(16, 71, ROUGE, NOIR, 219);
+	e->afficherCaractere(21, 71, ROUGE, NOIR, 219);
 
-		e->afficherCaractere(17, 72, ROUGE, NOIR, 219);
-		e->afficherCaractere(18, 72, ROUGE, NOIR, 219);
-		e->afficherCaractere(19, 72, ROUGE, NOIR, 219);
-		e->afficherCaractere(20, 72, ROUGE, NOIR, 219);
+	e->afficherCaractere(17, 72, ROUGE, NOIR, 219);
+	e->afficherCaractere(18, 72, ROUGE, NOIR, 219);
+	e->afficherCaractere(19, 72, ROUGE, NOIR, 219);
+	e->afficherCaractere(20, 72, ROUGE, NOIR, 219);
 }
