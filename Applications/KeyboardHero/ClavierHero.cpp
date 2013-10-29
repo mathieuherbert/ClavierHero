@@ -19,6 +19,8 @@
 //le score
 int ClavierHero::score = 0;
 
+//booleans definissant les zones ou la note est jouable.
+//les zones valant tous les points et celles ne valant que la moitié sont aussi définies
 bool ClavierHero::c1Dessus = false;
 bool ClavierHero::c1ok= false;
 bool ClavierHero::c1Dessous = false;
@@ -35,13 +37,15 @@ bool ClavierHero::c4Dessus = false;
 bool ClavierHero::c4ok= false;
 bool ClavierHero::c4Dessous = false;
 
+//true si la note est validée sur sa colonne
 bool ClavierHero::c1PieceValider = false;
 bool ClavierHero::c2PieceValider = false;
 bool ClavierHero::c3PieceValider = false;
 bool ClavierHero::c4PieceValider = false;
 
+//true si le score est inferieur à la limite définie
 bool ClavierHero::scoreTropBas= false;
-int ClavierHero::valScoreInf= -150;
+//constructeur
 ClavierHero::ClavierHero(EcranV *e, ClavierV *c) {
 	ecran = e;
 	clavier = c;
@@ -63,7 +67,7 @@ void ClavierHero::run() {
 				"Pour lancer le mode de votre choix taper la numero correspondant");
 		char i = clavier->getChar();
 		if (i == 'l') {
-			///jeu en lui même
+			//jeu en lui même
 			mario();
 		} else if (i == 'm') {
 			lune();
@@ -102,18 +106,21 @@ void ClavierHero::init() {
 
 }
 
+//lance la chanson super mario
 void ClavierHero::mario() {
 	init();
 	Bibliotheque* bibliotheque = new Bibliotheque(ecran, timer);
 	bibliotheque->superMario();
 }
 
+//lance la chanson au clair de la lune
 void ClavierHero::lune() {
 	init();
 	Bibliotheque* bibliotheque = new Bibliotheque(ecran, timer);
 	bibliotheque->auClairDeLaLune();
 }
 
+//affiche les lignes de défilement des notes
 void ClavierHero::afficherLignes(int ligne1, int ligne2, int ligne3, int ligne4) {
 	for (int lig = 0; lig < LIGNES; ++lig) {
 		ecran->afficherCaractere(lig, ligne1, VERT, NOIR, DESIGN_LIGNE);
@@ -123,6 +130,7 @@ void ClavierHero::afficherLignes(int ligne1, int ligne2, int ligne3, int ligne4)
 	}
 }
 
+//affiches les touches en bas des lignes
 void ClavierHero::afficherTouches(int ligne1, int ligne2, int ligne3,
 		int ligne4) {
 	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne1, "F1", VERT);
@@ -131,6 +139,7 @@ void ClavierHero::afficherTouches(int ligne1, int ligne2, int ligne3,
 	ecran->afficherMot(LIGNE_AFFICHAGE_TOUCHE, ligne4, "F4", BLEU_LEGER);
 }
 
+//affiche la ligne définissant la zone de jeu
 void ClavierHero::afficherLigneDeJeu(int col) {
 	for (int lig = 0; lig < COLONNES - 15; ++lig) {
 		ecran->afficherCaractere(col, lig, BLANC, NOIR, DESIGN_COLONNE);
@@ -140,7 +149,7 @@ void ClavierHero::afficherLigneDeJeu(int col) {
 void ClavierHero::setToucheJouee(int t) {
 
 	AfficherReussiteNote* aff = new AfficherReussiteNote(ecran);
-	//En fonction de la touche appuyer et du positionnement des notes on incrémente ou décrémente le score avec un texte
+	//En fonction de la touche appuyée et du positionnement des notes on incrémente ou décrémente le score avec un texte
 	if (t == FUN) {
 		if (ClavierHero::c1PieceValider == false) {
 			if (ClavierHero::c1Dessous) {
@@ -219,6 +228,7 @@ void ClavierHero::setToucheJouee(int t) {
 		}
 	}
 	afficherScore();
+	//affiche un commentaire sur la performance à droite de l'ecran
 	aff->start("clavierHero");
 }
 
