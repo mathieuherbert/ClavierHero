@@ -20,10 +20,10 @@
 
 class Note : public Threads {
 private:
-	Puls *temps;
-    int hauteur;
-    int touche;
-    int octave;
+	Puls *temps;	// Croche, Noire, ...
+    int hauteur;	// DO, RE, MI, ...
+    int touche;		// F1, F2,  ... -> touche qu'il faudra appuyer pour gagner des points
+    int octave;		// Numro de l'octave
     EcranV *ecran;
     Timer *timer;
     int m_tempo;

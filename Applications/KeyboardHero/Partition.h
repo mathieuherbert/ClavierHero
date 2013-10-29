@@ -17,10 +17,10 @@ class Note;
 class Partition {
 private:
 	char* m_titre;
-	double m_tempo;
+	double m_tempo;		// tempo de la partition
 	Note** m_partition;
 	int m_taillePartition;
-	Hauteur* m_dieses;
+	Hauteur* m_dieses;	// Liste des notes notées "dièse" au début de la partition. Les dièses seront répercutés sur tout la partition.
 	int m_tailleDieses;
 	Timer* timer;
 
