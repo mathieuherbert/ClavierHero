@@ -133,6 +133,9 @@ void Note::verificationDeValidationColUn(int & col, int & ligne) {
 			AfficherReussiteNote* reussiteNote = new AfficherReussiteNote(ecran);
 			if(!ClavierHero::c1PieceValider){
 				ClavierHero::score-=2;
+				for(int i=65;i<COLONNES;i++){
+					ecran->afficherCaractere(10,i,NOIR,NOIR,'_');
+				}
 				ClavierHero::afficherChiffreCommente(ecran,10, 65, "Score:", ClavierHero::score, 6);
 			}
 			ClavierHero::c1ok = false;

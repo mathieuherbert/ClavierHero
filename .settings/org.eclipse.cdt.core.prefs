@@ -1,6 +1,14 @@
+<<<<<<< HEAD
+=======
+#Tue Oct 29 10:16:37 CET 2013
+>>>>>>> branch 'master' of https://github.com/mathieuherbert/ClavierHero.git
 eclipse.preferences.version=1
 environment/project/0.1998395815/PATH/delimiter=;
 environment/project/0.1998395815/PATH/operation=replace
+<<<<<<< HEAD
 environment/project/0.1998395815/PATH/value=C\:\\sextant\\ccompil
+=======
+environment/project/0.1998395815/PATH/value=c\:\\sextant\\ccompil
+>>>>>>> branch 'master' of https://github.com/mathieuherbert/ClavierHero.git
 environment/project/0.1998395815/append=true
 environment/project/0.1998395815/appendContributed=false

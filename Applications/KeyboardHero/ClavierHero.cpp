@@ -92,7 +92,7 @@ void ClavierHero::run() {
 
 void ClavierHero::afficherScore() {
 	for(int i=65;i<COLONNES;i++){
-		ecran->afficherCaractere(10,i,NOIR,NOIR,' ');
+		ecran->afficherCaractere(10,i,NOIR,NOIR,'_');
 	}
 	afficherChiffreCommente(ecran, 10, 65, "Score:", ClavierHero::score, 6);
 }
