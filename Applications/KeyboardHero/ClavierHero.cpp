@@ -18,6 +18,7 @@
 #include "Bibliotheque.h"
 //le score
 int ClavierHero::score = 0;
+int ClavierHero::valScoreInf = -150;
 
 //booleans definissant les zones ou la note est jouable.
 //les zones valant tous les points et celles ne valant que la moitié sont aussi définies
@@ -87,6 +88,9 @@ void ClavierHero::run() {
 }
 
 void ClavierHero::afficherScore() {
+	for(int i=65;i<COLONNES;i++){
+		ecran->afficherCaractere(10,i,NOIR,NOIR,' ');
+	}
 	afficherChiffreCommente(ecran, 10, 65, "Score:", ClavierHero::score, 6);
 }
 
