@@ -76,7 +76,8 @@ void ClavierHero::run() {
 				"Bienvenue dans ClavierHero\nDeux chansons sont disponible \n");
 		ecran->afficherMot("l:Super Mario Bros\nm:Au Clair De La Lune\n");
 		ecran->afficherMot(
-				"Pour lancer le mode de votre choix taper la numero correspondant");
+				"Pour lancer le mode de votre choix taper la numero correspondant\n\n");
+		ecran->afficherMot("Jouez avec les touches a-z-e-r");
 		char i = clavier->getChar();
 		if (i == 'l') {
 			//jeu en lui même
